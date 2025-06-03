@@ -5,20 +5,36 @@
 
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Show loading screen initially
-    showLoadingScreen();
-    
-    // Initialize all components
+    // Core functionality
     initNavigation();
     initThemeToggle();
-    initScrollAnimations();
-    initParticleEffect();
-    initCounterAnimations();
-    initSkillBars();
-    initFormHandling();
     initSmoothScrolling();
+    initFormHandling();
+    
+    // Visual effects and animations
+    initScrollAnimations();
+    initSkillBars(); // Enhanced skill animations
+    initCounterAnimations();
+    initParticleEffect();
+    
+    // Enhanced features
     initLoadingStates();
     initEnhancedFeatures();
+    
+    // Performance optimizations
+    const debouncedResize = debounce(() => {
+        // Recalculate animations on resize
+        window.dispatchEvent(new Event('scroll'));
+    }, 250);
+    
+    window.addEventListener('resize', debouncedResize);
+    
+    // Trigger initial scroll event for already visible elements
+    setTimeout(() => {
+        window.dispatchEvent(new Event('scroll'));
+    }, 100);
+    
+    console.log('Enhanced Portfolio initialized successfully! 🚀');
 });
 
 /* ================================
@@ -300,67 +316,123 @@ function initCounterAnimations() {
 }
 
 /* ================================
-   Skill Bar Animations
+   Skill Bar Animations - Enhanced
    ================================ */
 
 function initSkillBars() {
-    // This will be called by the intersection observer
+    const skillCategories = document.querySelectorAll('.skill-category');
+    
+    const observerOptions = {
+        threshold: 0.3,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const skillObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.dataset.animated) {
+                entry.target.dataset.animated = 'true';
+                animateSkillBars(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    skillCategories.forEach(category => {
+        skillObserver.observe(category);
+    });
 }
 
 function animateSkillBars(skillCategory) {
     const skillItems = skillCategory.querySelectorAll('.skill-item');
     const skillBars = skillCategory.querySelectorAll('.skill-progress');
+    const percentageElements = skillCategory.querySelectorAll('.skill-percentage');
     
-    // Add animate class to skill items
+    // Add animate class to category first
+    setTimeout(() => {
+        skillCategory.classList.add('animate');
+    }, 100);
+    
+    // Animate each skill item with staggered timing
     skillItems.forEach((item, index) => {
         setTimeout(() => {
             item.classList.add('animate');
-        }, index * 150);
+        }, (index * 200) + 300);
     });
     
-    // Animate skill bars with staggered timing
+    // Animate skill bars with proper percentage and visual effects
     skillBars.forEach((bar, index) => {
-        const progress = bar.dataset.progress;
+        const progress = parseInt(bar.dataset.progress);
+        const percentageElement = percentageElements[index];
         
         setTimeout(() => {
+            // Start the progress bar animation
             bar.style.width = `${progress}%`;
+            bar.classList.add('animating');
             
-            // Add visual feedback for high skill levels
-            if (progress >= 90) {
+            // Add skill level visual indicators
+            if (progress >= 95) {
                 bar.classList.add('skill-expert');
-            } else if (progress >= 80) {
+                bar.style.background = 'linear-gradient(90deg, #667eea, #764ba2)';
+            } else if (progress >= 85) {
                 bar.classList.add('skill-advanced');
+                bar.style.background = 'linear-gradient(90deg, #4facfe, #00f2fe)';
+            } else if (progress >= 70) {
+                bar.classList.add('skill-intermediate');
+                bar.style.background = 'linear-gradient(90deg, #43e97b, #38f9d7)';
             }
             
             // Animate the percentage counter
-            const percentageElement = bar.closest('.skill-item').querySelector('.skill-percentage');
-            animatePercentage(percentageElement, progress);
+            if (percentageElement) {
+                animatePercentage(percentageElement, progress);
+            }
             
-        }, index * 300); // Increased delay for better visual impact
+            // Add pulse effect for high percentages
+            if (progress >= 90) {
+                setTimeout(() => {
+                    bar.classList.add('pulse-glow');
+                }, 1000);
+            }
+            
+        }, (index * 250) + 600); // Staggered animation timing
     });
     
-    // Add floating animation to tech items
+    // Animate tech items if they exist in this category
     const techItems = skillCategory.querySelectorAll('.tech-item');
-    techItems.forEach((item, index) => {
-        setTimeout(() => {
-            item.style.opacity = '1';
-            item.style.transform = 'translateY(0)';
-        }, (index * 100) + 500); // Start after skill bars
-    });
+    if (techItems.length > 0) {
+        techItems.forEach((item, index) => {
+            setTimeout(() => {
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0) scale(1)';
+                item.classList.add('animate');
+            }, (index * 100) + 800);
+        });
+    }
 }
 
 function animatePercentage(element, targetValue) {
-    const duration = 1500;
+    if (!element) return;
+    
+    const duration = 1800; // Increased duration for smoother animation
     const startValue = 0;
-    const increment = (targetValue - startValue) / (duration / 16);
+    const increment = targetValue / (duration / 16);
     let currentValue = startValue;
+    
+    // Reset the element first
+    element.textContent = '0%';
     
     const timer = setInterval(() => {
         currentValue += increment;
         
         if (currentValue >= targetValue) {
             element.textContent = targetValue + '%';
+            element.classList.add('final-value');
             clearInterval(timer);
+            
+            // Add completion effect
+            element.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                element.style.transform = 'scale(1)';
+            }, 200);
+            
         } else {
             element.textContent = Math.floor(currentValue) + '%';
         }
