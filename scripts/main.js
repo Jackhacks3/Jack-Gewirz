@@ -5,6 +5,9 @@
 
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Show loading screen initially
+    showLoadingScreen();
+    
     // Initialize all components
     initNavigation();
     initThemeToggle();
@@ -15,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initFormHandling();
     initSmoothScrolling();
     initLoadingStates();
+    initEnhancedFeatures();
 });
 
 /* ================================
@@ -304,15 +308,63 @@ function initSkillBars() {
 }
 
 function animateSkillBars(skillCategory) {
+    const skillItems = skillCategory.querySelectorAll('.skill-item');
     const skillBars = skillCategory.querySelectorAll('.skill-progress');
     
+    // Add animate class to skill items
+    skillItems.forEach((item, index) => {
+        setTimeout(() => {
+            item.classList.add('animate');
+        }, index * 150);
+    });
+    
+    // Animate skill bars with staggered timing
     skillBars.forEach((bar, index) => {
         const progress = bar.dataset.progress;
         
         setTimeout(() => {
             bar.style.width = `${progress}%`;
-        }, index * 200); // Stagger the animations
+            
+            // Add visual feedback for high skill levels
+            if (progress >= 90) {
+                bar.classList.add('skill-expert');
+            } else if (progress >= 80) {
+                bar.classList.add('skill-advanced');
+            }
+            
+            // Animate the percentage counter
+            const percentageElement = bar.closest('.skill-item').querySelector('.skill-percentage');
+            animatePercentage(percentageElement, progress);
+            
+        }, index * 300); // Increased delay for better visual impact
     });
+    
+    // Add floating animation to tech items
+    const techItems = skillCategory.querySelectorAll('.tech-item');
+    techItems.forEach((item, index) => {
+        setTimeout(() => {
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+        }, (index * 100) + 500); // Start after skill bars
+    });
+}
+
+function animatePercentage(element, targetValue) {
+    const duration = 1500;
+    const startValue = 0;
+    const increment = (targetValue - startValue) / (duration / 16);
+    let currentValue = startValue;
+    
+    const timer = setInterval(() => {
+        currentValue += increment;
+        
+        if (currentValue >= targetValue) {
+            element.textContent = targetValue + '%';
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(currentValue) + '%';
+        }
+    }, 16);
 }
 
 /* ================================
@@ -614,4 +666,110 @@ console.log(`
 💼 Elite Poker Professional • Marketing Strategist • AI Innovation Specialist
 🚀 Built with modern web technologies
 📧 Contact: jack.gewirz@example.com
-`); 
+`);
+
+// Loading Screen Management
+function showLoadingScreen() {
+    const loadingScreen = document.getElementById('loadingScreen');
+    if (loadingScreen) {
+        // Hide loading screen after page loads
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                loadingScreen.classList.add('hidden');
+                // Remove from DOM after transition
+                setTimeout(() => {
+                    if (loadingScreen.parentNode) {
+                        loadingScreen.parentNode.removeChild(loadingScreen);
+                    }
+                }, 500);
+            }, 800); // Delay to show loading animation
+        });
+    }
+}
+
+// Enhanced Features Initialization
+function initEnhancedFeatures() {
+    // Initialize tech item tooltips
+    initTechTooltips();
+    
+    // Initialize enhanced skill animations
+    initEnhancedSkillAnimations();
+    
+    // Initialize hero animations
+    initHeroAnimations();
+    
+    // Initialize enhanced button effects
+    initButtonEffects();
+}
+
+function initTechTooltips() {
+    const techItems = document.querySelectorAll('.tech-item');
+    
+    techItems.forEach(item => {
+        const tooltip = item.querySelector('.tech-tooltip');
+        if (!tooltip) return;
+        
+        item.addEventListener('mouseenter', () => {
+            tooltip.style.opacity = '1';
+            tooltip.style.transform = 'translateX(-50%) translateY(0)';
+        });
+        
+        item.addEventListener('mouseleave', () => {
+            tooltip.style.opacity = '0';
+            tooltip.style.transform = 'translateX(-50%) translateY(-8px)';
+        });
+    });
+}
+
+function initEnhancedSkillAnimations() {
+    // Set initial state for tech items
+    const techItems = document.querySelectorAll('.tech-item');
+    techItems.forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+        item.style.transition = 'all 0.6s ease-out';
+    });
+}
+
+function initHeroAnimations() {
+    // Initialize any additional hero animations that need JavaScript
+    const heroStats = document.querySelectorAll('.stat-item');
+    
+    heroStats.forEach((stat, index) => {
+        stat.style.opacity = '0';
+        stat.style.transform = 'translateY(30px)';
+        stat.style.transition = 'all 0.8s ease-out';
+        
+        setTimeout(() => {
+            stat.style.opacity = '1';
+            stat.style.transform = 'translateY(0)';
+        }, 3500 + (index * 200)); // Start after text animations
+    });
+}
+
+function initButtonEffects() {
+    const enhancedButtons = document.querySelectorAll('.btn-enhanced');
+    
+    enhancedButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            const ripple = this.querySelector('.btn-ripple');
+            if (ripple) {
+                // Reset ripple
+                ripple.style.width = '0';
+                ripple.style.height = '0';
+                
+                // Trigger ripple effect
+                setTimeout(() => {
+                    ripple.style.width = '200px';
+                    ripple.style.height = '200px';
+                }, 10);
+                
+                // Reset after animation
+                setTimeout(() => {
+                    ripple.style.width = '0';
+                    ripple.style.height = '0';
+                }, 300);
+            }
+        });
+    });
+} 

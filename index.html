@@ -17,7 +17,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/main.css">
@@ -29,26 +29,56 @@
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-animation">
+            <div class="loading-circle"></div>
+            <div class="loading-text">JG</div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="nav-container">
             <div class="nav-brand">
-                <span class="nav-logo">JG</span>
+                <span class="nav-logo">
+                    <span class="logo-text">JG</span>
+                    <div class="logo-underline"></div>
+                </span>
             </div>
             <div class="nav-menu" id="navMenu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#poker" class="nav-link">Poker Career</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#home" class="nav-link active">
+                    <span class="nav-link-text">Home</span>
+                    <div class="nav-link-background"></div>
+                </a>
+                <a href="#poker" class="nav-link">
+                    <span class="nav-link-text">Poker Career</span>
+                    <div class="nav-link-background"></div>
+                </a>
+                <a href="#experience" class="nav-link">
+                    <span class="nav-link-text">Experience</span>
+                    <div class="nav-link-background"></div>
+                </a>
+                <a href="#skills" class="nav-link">
+                    <span class="nav-link-text">Skills</span>
+                    <div class="nav-link-background"></div>
+                </a>
+                <a href="#contact" class="nav-link">
+                    <span class="nav-link-text">Contact</span>
+                    <div class="nav-link-background"></div>
+                </a>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                    <span class="theme-icon">🌙</span>
+                    <div class="theme-toggle-track">
+                        <div class="theme-toggle-thumb">
+                            <span class="theme-icon">🌙</span>
+                        </div>
+                    </div>
                 </button>
             </div>
             <div class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span class="nav-toggle-line"></span>
+                <span class="nav-toggle-line"></span>
+                <span class="nav-toggle-line"></span>
             </div>
         </div>
     </nav>
@@ -56,40 +86,104 @@
     <!-- Hero Section -->
     <section id="home" class="hero" role="banner">
         <div class="hero-background">
+            <div class="animated-background">
+                <div class="floating-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                    <div class="shape shape-4"></div>
+                    <div class="shape shape-5"></div>
+                </div>
+                <div class="grid-pattern"></div>
+            </div>
             <div class="particles-container" id="particles"></div>
             <div class="gradient-overlay"></div>
         </div>
+        
         <div class="hero-content">
             <div class="hero-text">
+                <div class="hero-intro">
+                    <span class="intro-line">Hello, I'm</span>
+                </div>
                 <h1 class="hero-title">
-                    <span class="hero-name">Jack Gewirz</span>
-                    <span class="hero-subtitle">Professional Portfolio</span>
+                    <span class="hero-name">
+                        <span class="name-part" data-text="Jack">Jack</span>
+                        <span class="name-part" data-text="Gewirz">Gewirz</span>
+                    </span>
+                    <span class="hero-subtitle">
+                        <span class="subtitle-word">Elite</span>
+                        <span class="subtitle-word">Professional</span>
+                        <span class="subtitle-word">Portfolio</span>
+                    </span>
                 </h1>
-                <p class="hero-tagline">
-                    Elite Poker Professional • Marketing Strategist • AI Innovation Specialist
-                </p>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="400">0</span>
-                        <span class="stat-label">K+ Earnings</span>
+                
+                <div class="hero-tagline-container">
+                    <p class="hero-tagline" id="heroTagline">
+                        <span class="tagline-part">Elite Poker Professional</span>
+                        <span class="tagline-separator">•</span>
+                        <span class="tagline-part">Marketing Strategist</span>
+                        <span class="tagline-separator">•</span>
+                        <span class="tagline-part">AI Innovation Specialist</span>
+                    </p>
+                </div>
+
+                <div class="hero-stats" id="heroStats">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="stat-wrapper">
+                            <span class="stat-symbol">$</span>
+                            <span class="stat-number" data-target="400">0</span>
+                            <span class="stat-suffix">K+</span>
+                        </div>
+                        <span class="stat-label">Career Earnings</span>
+                        <div class="stat-background"></div>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="50">0</span>
-                        <span class="stat-label">Top Global Rank</span>
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="stat-wrapper">
+                            <span class="stat-number" data-target="50">0</span>
+                            <span class="stat-suffix">th</span>
+                        </div>
+                        <span class="stat-label">Global Rank</span>
+                        <div class="stat-background"></div>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="6000">0</span>
-                        <span class="stat-label">+ Games Played</span>
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="stat-wrapper">
+                            <span class="stat-number" data-target="6000">0</span>
+                            <span class="stat-suffix">+</span>
+                        </div>
+                        <span class="stat-label">Games Mastered</span>
+                        <div class="stat-background"></div>
+                    </div>
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="stat-wrapper">
+                            <span class="stat-number" data-target="5">0</span>
+                            <span class="stat-suffix">+</span>
+                        </div>
+                        <span class="stat-label">Years Experience</span>
+                        <div class="stat-background"></div>
                     </div>
                 </div>
-                <div class="hero-cta">
-                    <a href="#poker" class="btn btn-primary">View Portfolio</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                
+                <div class="hero-cta" data-aos="fade-up" data-aos-delay="500">
+                    <a href="#poker" class="btn btn-primary btn-enhanced">
+                        <span class="btn-text">Explore Portfolio</span>
+                        <div class="btn-shimmer"></div>
+                        <div class="btn-ripple"></div>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary btn-enhanced">
+                        <span class="btn-text">Get In Touch</span>
+                        <div class="btn-shimmer"></div>
+                        <div class="btn-ripple"></div>
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <div class="scroll-arrow"></div>
+        
+        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="600">
+            <div class="scroll-text">Scroll to explore</div>
+            <div class="scroll-arrow">
+                <div class="scroll-arrow-line"></div>
+                <div class="scroll-arrow-head"></div>
+            </div>
         </div>
     </section>
 
@@ -235,7 +329,7 @@
             <div class="section-header">
                 <h2 class="section-title">Core Competencies</h2>
                 <p class="section-description">
-                    Advanced proficiency across marketing, technology, and strategic analysis disciplines.
+                    Advanced proficiency across marketing, technology, and strategic analysis disciplines with proven track record of excellence.
                 </p>
             </div>
 
@@ -248,25 +342,52 @@
                         </h3>
                         <div class="skill-bars">
                             <div class="skill-item">
-                                <span class="skill-name">Marketing Strategy</span>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="95"></div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Marketing Strategy</span>
+                                    <span class="skill-level skill-level-expert"></span>
                                 </div>
-                                <span class="skill-percentage">95%</span>
+                                <div class="skill-bar-container">
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="95"></div>
+                                    </div>
+                                    <span class="skill-percentage">95%</span>
+                                </div>
                             </div>
                             <div class="skill-item">
-                                <span class="skill-name">Sales</span>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="90"></div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Sales Performance</span>
+                                    <span class="skill-level skill-level-expert"></span>
                                 </div>
-                                <span class="skill-percentage">90%</span>
+                                <div class="skill-bar-container">
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="90"></div>
+                                    </div>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
                             </div>
                             <div class="skill-item">
-                                <span class="skill-name">Entrepreneurship</span>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="88"></div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Entrepreneurship</span>
+                                    <span class="skill-level skill-level-advanced"></span>
                                 </div>
-                                <span class="skill-percentage">88%</span>
+                                <div class="skill-bar-container">
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="88"></div>
+                                    </div>
+                                    <span class="skill-percentage">88%</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Brand Development</span>
+                                    <span class="skill-level skill-level-advanced"></span>
+                                </div>
+                                <div class="skill-bar-container">
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="85"></div>
+                                    </div>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -278,25 +399,52 @@
                         </h3>
                         <div class="skill-bars">
                             <div class="skill-item">
-                                <span class="skill-name">AI/ML Applications</span>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="85"></div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Game Theory & Mathematics</span>
+                                    <span class="skill-level skill-level-expert"></span>
                                 </div>
-                                <span class="skill-percentage">85%</span>
+                                <div class="skill-bar-container">
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="95"></div>
+                                    </div>
+                                    <span class="skill-percentage">95%</span>
+                                </div>
                             </div>
                             <div class="skill-item">
-                                <span class="skill-name">Data Analysis</span>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="90"></div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Data Analysis & Statistics</span>
+                                    <span class="skill-level skill-level-expert"></span>
                                 </div>
-                                <span class="skill-percentage">90%</span>
+                                <div class="skill-bar-container">
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="90"></div>
+                                    </div>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
                             </div>
                             <div class="skill-item">
-                                <span class="skill-name">Game Theory</span>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="95"></div>
+                                <div class="skill-info">
+                                    <span class="skill-name">AI/ML Applications</span>
+                                    <span class="skill-level skill-level-advanced"></span>
                                 </div>
-                                <span class="skill-percentage">95%</span>
+                                <div class="skill-bar-container">
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="85"></div>
+                                    </div>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Strategic Optimization</span>
+                                    <span class="skill-level skill-level-expert"></span>
+                                </div>
+                                <div class="skill-bar-container">
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="92"></div>
+                                    </div>
+                                    <span class="skill-percentage">92%</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -305,32 +453,48 @@
                 <div class="ai-technologies glass-effect">
                     <h3 class="category-title">
                         <span class="category-icon">⚡</span>
-                        AI & Technology Proficiency
+                        AI & Technology Expertise
                     </h3>
                     <div class="tech-grid">
                         <div class="tech-item">
                             <div class="tech-icon">🧠</div>
                             <div class="tech-name">Machine Learning</div>
+                            <div class="tech-tooltip">Predictive modeling and pattern recognition</div>
                         </div>
                         <div class="tech-item">
                             <div class="tech-icon">📈</div>
                             <div class="tech-name">Predictive Analytics</div>
+                            <div class="tech-tooltip">Statistical forecasting and trend analysis</div>
                         </div>
                         <div class="tech-item">
                             <div class="tech-icon">🎯</div>
                             <div class="tech-name">Strategic Algorithms</div>
+                            <div class="tech-tooltip">Game theory and decision optimization</div>
                         </div>
                         <div class="tech-item">
                             <div class="tech-icon">🔬</div>
                             <div class="tech-name">Mathematical Analysis</div>
+                            <div class="tech-tooltip">Probability theory and statistical modeling</div>
                         </div>
                         <div class="tech-item">
                             <div class="tech-icon">⚙️</div>
                             <div class="tech-name">Process Optimization</div>
+                            <div class="tech-tooltip">Workflow enhancement and efficiency</div>
                         </div>
                         <div class="tech-item">
                             <div class="tech-icon">💡</div>
                             <div class="tech-name">Innovation Strategy</div>
+                            <div class="tech-tooltip">Technology integration and digital transformation</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">🎲</div>
+                            <div class="tech-name">Risk Assessment</div>
+                            <div class="tech-tooltip">Probability analysis and risk management</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">🔄</div>
+                            <div class="tech-name">System Analysis</div>
+                            <div class="tech-tooltip">Complex system evaluation and optimization</div>
                         </div>
                     </div>
                 </div>
