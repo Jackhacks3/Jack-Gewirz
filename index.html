@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jack Gewirz - Elite Poker Professional, Marketing Strategist & AI Innovation Specialist. Portfolio showcasing $400K+ poker earnings, marketing expertise, and entrepreneurial success.">
+    <meta name="keywords" content="Jack Gewirz, poker professional, marketing strategist, AI specialist, entrepreneur, portfolio">
+    <meta name="author" content="Jack Gewirz">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Jack Gewirz - Professional Portfolio">
+    <meta property="og:description" content="Elite Poker Professional • Marketing Strategist • AI Innovation Specialist">
+    <meta property="og:type" content="website">
+    
+    <title>Jack Gewirz - Professional Portfolio</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    
+    <!-- Chart.js for data visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="nav-logo">JG</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#poker" class="nav-link">Poker Career</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+            <div class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero" role="banner">
+        <div class="hero-background">
+            <div class="particles-container" id="particles"></div>
+            <div class="gradient-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="hero-name">Jack Gewirz</span>
+                    <span class="hero-subtitle">Professional Portfolio</span>
+                </h1>
+                <p class="hero-tagline">
+                    Elite Poker Professional • Marketing Strategist • AI Innovation Specialist
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="400">0</span>
+                        <span class="stat-label">K+ Earnings</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="50">0</span>
+                        <span class="stat-label">Top Global Rank</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="6000">0</span>
+                        <span class="stat-label">+ Games Played</span>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="#poker" class="btn btn-primary">View Portfolio</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Elite Poker Career Section -->
+    <section id="poker" class="poker-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Elite Poker Career</h2>
+                <p class="section-description">
+                    Through intensive game theory study, mathematical analysis, and disciplined bankroll management, 
+                    achieved elite status among the world's top 50 online poker earners.
+                </p>
+            </div>
+            
+            <div class="poker-content">
+                <div class="poker-metrics">
+                    <div class="metric-card glass-effect">
+                        <div class="metric-icon">🏆</div>
+                        <div class="metric-value">Top 50</div>
+                        <div class="metric-label">Global Online Earner</div>
+                    </div>
+                    <div class="metric-card glass-effect">
+                        <div class="metric-icon">💰</div>
+                        <div class="metric-value">$400K+</div>
+                        <div class="metric-label">Career Earnings</div>
+                    </div>
+                    <div class="metric-card glass-effect">
+                        <div class="metric-icon">🎯</div>
+                        <div class="metric-value">6,000+</div>
+                        <div class="metric-label">Games Played</div>
+                    </div>
+                    <div class="metric-card glass-effect">
+                        <div class="metric-icon">👨‍🏫</div>
+                        <div class="metric-value">Coach</div>
+                        <div class="metric-label">& Mentor</div>
+                    </div>
+                </div>
+
+                <div class="chart-container glass-effect">
+                    <h3 class="chart-title">Career Progression</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="profitChart" role="img" aria-label="Poker career profit progression chart"></canvas>
+                    </div>
+                    <div class="chart-description">
+                        Consistent upward trajectory from initial learning phase to six-figure annual earnings
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Professional Experience</h2>
+                <p class="section-description">
+                    A diverse background spanning marketing, entrepreneurship, and strategic sales across multiple industries.
+                </p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-effect">
+                        <div class="timeline-date">Jan 2021 - July 2021</div>
+                        <h3 class="timeline-title">Content Marketing Internship</h3>
+                        <div class="timeline-company">Ford Hamilton</div>
+                        <ul class="timeline-description">
+                            <li>Organized promotional content for Island Coastal Lager, Tost, and Heli campaigns</li>
+                            <li>Generated <strong>$2M in crowdfunding</strong> and <strong>100K+ social impressions</strong></li>
+                            <li>Weekly CEO collaboration on strategy and creative direction</li>
+                            <li>Google Analytics optimization for maximum ROAS</li>
+                        </ul>
+                        <div class="timeline-metrics">
+                            <span class="metric-tag">$2M Crowdfunding</span>
+                            <span class="metric-tag">100K+ Impressions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-effect">
+                        <div class="timeline-date">June 2020 - Dec 2020</div>
+                        <h3 class="timeline-title">Online Marketplace Entrepreneur</h3>
+                        <div class="timeline-company">Independent</div>
+                        <ul class="timeline-description">
+                            <li>Created Reddit-based international marketplace</li>
+                            <li><strong>$10,000+ personal profits</strong> generated</li>
+                            <li>1,000+ unique transactions facilitated</li>
+                            <li>750 sales in final 3 months of operation</li>
+                        </ul>
+                        <div class="timeline-metrics">
+                            <span class="metric-tag">$10K+ Profit</span>
+                            <span class="metric-tag">1,000+ Transactions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-effect">
+                        <div class="timeline-date">Summer 2019</div>
+                        <h3 class="timeline-title">Solar Energy Sales</h3>
+                        <div class="timeline-company">Blue Raven Solar</div>
+                        <ul class="timeline-description">
+                            <li>1,000+ face-to-face presentations with <strong>4.8% conversion rate</strong></li>
+                            <li><strong>2nd highest performer</strong> among 17 sales representatives</li>
+                            <li>Demographic-based personalized pitch development</li>
+                        </ul>
+                        <div class="timeline-metrics">
+                            <span class="metric-tag">4.8% Conversion</span>
+                            <span class="metric-tag">Top 2 Performer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-effect">
+                        <div class="timeline-date">Sept 2019 - Jan 2020</div>
+                        <h3 class="timeline-title">Regional Marketing</h3>
+                        <div class="timeline-company">Guyaki Yerba Mate</div>
+                        <ul class="timeline-description">
+                            <li>Denver area campaign organization and execution</li>
+                            <li><strong>20,000 social media impressions</strong> in 2 months</li>
+                            <li>Bi-weekly consumer engagement and brand education</li>
+                        </ul>
+                        <div class="timeline-metrics">
+                            <span class="metric-tag">20K Impressions</span>
+                            <span class="metric-tag">2 Months</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Core Competencies</h2>
+                <p class="section-description">
+                    Advanced proficiency across marketing, technology, and strategic analysis disciplines.
+                </p>
+            </div>
+
+            <div class="skills-content">
+                <div class="skills-categories">
+                    <div class="skill-category glass-effect">
+                        <h3 class="category-title">
+                            <span class="category-icon">📊</span>
+                            Marketing & Strategy
+                        </h3>
+                        <div class="skill-bars">
+                            <div class="skill-item">
+                                <span class="skill-name">Marketing Strategy</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="95"></div>
+                                </div>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Sales</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="90"></div>
+                                </div>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Entrepreneurship</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="88"></div>
+                                </div>
+                                <span class="skill-percentage">88%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category glass-effect">
+                        <h3 class="category-title">
+                            <span class="category-icon">🤖</span>
+                            Technology & AI
+                        </h3>
+                        <div class="skill-bars">
+                            <div class="skill-item">
+                                <span class="skill-name">AI/ML Applications</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85"></div>
+                                </div>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Data Analysis</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="90"></div>
+                                </div>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Game Theory</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="95"></div>
+                                </div>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ai-technologies glass-effect">
+                    <h3 class="category-title">
+                        <span class="category-icon">⚡</span>
+                        AI & Technology Proficiency
+                    </h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <div class="tech-icon">🧠</div>
+                            <div class="tech-name">Machine Learning</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">📈</div>
+                            <div class="tech-name">Predictive Analytics</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">🎯</div>
+                            <div class="tech-name">Strategic Algorithms</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">🔬</div>
+                            <div class="tech-name">Mathematical Analysis</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">⚙️</div>
+                            <div class="tech-name">Process Optimization</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">💡</div>
+                            <div class="tech-name">Innovation Strategy</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-description">
+                    Ready to discuss opportunities in marketing, poker strategy, or AI innovation.
+                </p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item glass-effect">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>jack.gewirz@example.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item glass-effect">
+                        <div class="contact-icon">🔗</div>
+                        <div class="contact-details">
+                            <h3>LinkedIn</h3>
+                            <p>linkedin.com/in/jackgewirz</p>
+                        </div>
+                    </div>
+                    <div class="contact-item glass-effect">
+                        <div class="contact-icon">💼</div>
+                        <div class="contact-details">
+                            <h3>Portfolio</h3>
+                            <p>Available for Download</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form glass-effect" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a topic</option>
+                            <option value="marketing">Marketing Consultation</option>
+                            <option value="poker">Poker Strategy/Coaching</option>
+                            <option value="ai">AI Innovation Project</option>
+                            <option value="other">Other Opportunity</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2024 Jack Gewirz. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#poker">Poker</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/charts.js"></script>
+    <script src="scripts/animations.js"></script>
+</body>
+</html> 
