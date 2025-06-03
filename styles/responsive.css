@@ -405,21 +405,151 @@
     padding: var(--space-lg);
   }
 
-  /* Forms */
   .form-group {
     margin-bottom: var(--space-md);
   }
 
   .form-group input,
-  .form-group select,
-  .form-group textarea {
-    padding: 12px;
-    font-size: 16px; /* Prevents zoom on iOS */
+  .form-group textarea,
+  .form-group select {
+    padding: var(--space-sm);
+    font-size: 1rem;
+  }
+
+  /* Achievement Metrics Mobile */
+  .achievement-metrics {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+  }
+
+  .achievement-item {
+    padding: var(--space-md);
+  }
+
+  .achievement-number {
+    font-size: 1.75rem;
+  }
+
+  .achievement-label {
+    font-size: 0.8rem;
+  }
+
+  /* AI Proficiency Mobile */
+  .ai-application-card {
+    padding: var(--space-lg);
+  }
+
+  .application-icon {
+    font-size: 2rem;
+  }
+
+  .application-title {
+    font-size: 1.1rem;
+  }
+
+  .tools-title {
+    font-size: 1.25rem;
+  }
+
+  .tools-icon {
+    font-size: 2rem;
+  }
+
+  .category-name {
+    font-size: 1.1rem;
+  }
+
+  .ai-impact-metrics {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+  }
+
+  .impact-metric {
+    padding: var(--space-lg);
+  }
+
+  .impact-number {
+    font-size: 1.75rem;
+  }
+
+  .impact-label {
+    font-size: 1rem;
+  }
+
+  .impact-description {
+    font-size: 0.8rem;
+  }
+
+  /* Testimonial Mobile */
+  .testimonial-section {
+    padding: var(--space-lg);
+  }
+
+  .testimonial-title {
+    font-size: 1.25rem;
+  }
+
+  .testimonial-content {
+    font-size: 1rem;
+    padding: var(--space-md);
+  }
+
+  .testimonial-content::before {
+    font-size: 2.5rem;
+    top: 0;
+    left: var(--space-xs);
+  }
+
+  .testimonial-metric {
+    padding: var(--space-sm);
+  }
+
+  .testimonial-metric .metric-number {
+    font-size: 1.5rem;
+  }
+
+  /* Enhanced Contact Mobile */
+  .contact-cta {
+    padding: var(--space-lg);
+  }
+
+  .cta-title {
+    font-size: 1.5rem;
+  }
+
+  .cta-description {
+    font-size: 1rem;
+  }
+
+  .highlight-item {
+    padding: var(--space-md);
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .highlight-text {
+    text-align: left;
+    font-size: 0.9rem;
+  }
+
+  .social-links {
+    padding: var(--space-lg);
+  }
+
+  .social-title {
+    font-size: 1.1rem;
+  }
+
+  .social-button {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 0.9rem;
   }
 
   /* Footer */
   .footer {
-    padding: var(--space-lg) 0;
+    padding: var(--space-xl) 0 var(--space-lg);
   }
 
   .footer-links {
@@ -630,4 +760,135 @@
       grid-template-columns: 1fr;
     }
   }
+}
+
+/* Achievement Metrics */
+.achievement-metrics {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-md);
+  padding: var(--space-lg);
+}
+
+.achievement-number {
+  font-size: 2rem;
+}
+
+.achievement-label {
+  font-size: 0.85rem;
+}
+
+/* AI Proficiency Section */
+.ai-applications {
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+.ai-application-card {
+  padding: var(--space-xl);
+}
+
+.application-header {
+  flex-direction: column;
+  text-align: center;
+  gap: var(--space-sm);
+}
+
+.application-title {
+  font-size: 1.25rem;
+}
+
+.tools-categories {
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+.tools-title {
+  font-size: 1.5rem;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.ai-impact-metrics {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-md);
+}
+
+.impact-number {
+  font-size: 2rem;
+}
+
+/* Testimonial Section */
+.testimonial-section {
+  padding: var(--space-xl);
+}
+
+.testimonial-title {
+  font-size: 1.5rem;
+}
+
+.testimonial-content {
+  font-size: 1.1rem;
+  padding: var(--space-lg);
+}
+
+.testimonial-content::before {
+  font-size: 3rem;
+  top: -5px;
+  left: var(--space-sm);
+}
+
+.testimonial-metrics {
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.poker-expertise {
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+.expertise-item {
+  padding: var(--space-lg);
+}
+
+/* Enhanced Contact Section */
+.cta-highlights {
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.highlight-item {
+  flex-direction: column;
+  text-align: center;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+}
+
+.highlight-text {
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.social-buttons {
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-button {
+  width: 100%;
+  max-width: 250px;
+  justify-content: center;
+}
+
+.form-row {
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.form-header {
+  margin-bottom: var(--space-lg);
+}
+
+.form-title {
+  font-size: 1.5rem;
 } 
