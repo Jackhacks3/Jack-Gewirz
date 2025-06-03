@@ -1,1023 +1,1280 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jack Gewirz - Elite Poker Professional, Marketing Strategist & AI Innovation Specialist. Portfolio showcasing $400K+ poker earnings, marketing expertise, and entrepreneurial success.">
-    <meta name="keywords" content="Jack Gewirz, poker professional, marketing strategist, AI specialist, entrepreneur, portfolio">
-    <meta name="author" content="Jack Gewirz">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Jack Gewirz - Elite Poker Professional, Marketing Strategist & AI Innovation Specialist. Portfolio showcasing $400K+ poker earnings, marketing expertise, and entrepreneurial success."
+    />
+    <meta
+      name="keywords"
+      content="Jack Gewirz, poker professional, marketing strategist, AI specialist, entrepreneur, portfolio"
+    />
+    <meta name="author" content="Jack Gewirz" />
+
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Jack Gewirz - Professional Portfolio">
-    <meta property="og:description" content="Elite Poker Professional • Marketing Strategist • AI Innovation Specialist">
-    <meta property="og:type" content="website">
-    
+    <meta property="og:title" content="Jack Gewirz - Professional Portfolio" />
+    <meta
+      property="og:description"
+      content="Elite Poker Professional • Marketing Strategist • AI Innovation Specialist"
+    />
+    <meta property="og:type" content="website" />
+
     <title>Jack Gewirz - Professional Portfolio</title>
-    
+
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/components.css">
-    <link rel="stylesheet" href="styles/responsive.css">
-    
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/responsive.css" />
+
+    <!-- Chat Popup -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js"
+      rel="preload"
+      as="script"
+    />
+
     <!-- Chart.js for data visualizations -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
-        <div class="loading-animation">
-            <div class="loading-circle"></div>
-            <div class="loading-text">JG</div>
-        </div>
+      <div class="loading-animation">
+        <div class="loading-circle"></div>
+        <div class="loading-text">JG</div>
+      </div>
     </div>
 
     <!-- Navigation -->
     <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <span class="nav-logo">
-                    <span class="logo-text">JG</span>
-                    <div class="logo-underline"></div>
-                </span>
-            </div>
-            <div class="nav-menu" id="navMenu">
-                <a href="#home" class="nav-link active">
-                    <span class="nav-link-text">Home</span>
-                    <div class="nav-link-background"></div>
-                </a>
-                <a href="#poker" class="nav-link">
-                    <span class="nav-link-text">Poker Career</span>
-                    <div class="nav-link-background"></div>
-                </a>
-                <a href="#ai-proficiency" class="nav-link">
-                    <span class="nav-link-text">AI Expertise</span>
-                    <div class="nav-link-background"></div>
-                </a>
-                <a href="#experience" class="nav-link">
-                    <span class="nav-link-text">Experience</span>
-                    <div class="nav-link-background"></div>
-                </a>
-                <a href="#skills" class="nav-link">
-                    <span class="nav-link-text">Skills</span>
-                    <div class="nav-link-background"></div>
-                </a>
-                <a href="#contact" class="nav-link">
-                    <span class="nav-link-text">Contact</span>
-                    <div class="nav-link-background"></div>
-                </a>
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                    <div class="theme-toggle-track">
-                        <div class="theme-toggle-thumb">
-                            <span class="theme-icon">🌙</span>
-                        </div>
-                    </div>
-                </button>
-            </div>
-            <div class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
-                <span class="nav-toggle-line"></span>
-                <span class="nav-toggle-line"></span>
-                <span class="nav-toggle-line"></span>
-            </div>
+      <div class="nav-container">
+        <div class="nav-brand">
+          <span class="nav-logo">
+            <span class="logo-text">JG</span>
+            <div class="logo-underline"></div>
+          </span>
         </div>
+        <div class="nav-menu" id="navMenu">
+          <a href="#home" class="nav-link active">
+            <span class="nav-link-text">Home</span>
+            <div class="nav-link-background"></div>
+          </a>
+          <a href="#poker" class="nav-link">
+            <span class="nav-link-text">Poker Career</span>
+            <div class="nav-link-background"></div>
+          </a>
+          <a href="#ai-proficiency" class="nav-link">
+            <span class="nav-link-text">AI Expertise</span>
+            <div class="nav-link-background"></div>
+          </a>
+          <a href="#experience" class="nav-link">
+            <span class="nav-link-text">Experience</span>
+            <div class="nav-link-background"></div>
+          </a>
+          <a href="#skills" class="nav-link">
+            <span class="nav-link-text">Skills</span>
+            <div class="nav-link-background"></div>
+          </a>
+          <a href="#contact" class="nav-link">
+            <span class="nav-link-text">Contact</span>
+            <div class="nav-link-background"></div>
+          </a>
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle dark mode"
+          >
+            <div class="theme-toggle-track">
+              <div class="theme-toggle-thumb">
+                <span class="theme-icon">🌙</span>
+              </div>
+            </div>
+          </button>
+        </div>
+        <div
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Toggle navigation menu"
+        >
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+        </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero" role="banner">
-        <div class="hero-background">
-            <div class="animated-background">
-                <div class="floating-shapes">
-                    <div class="shape shape-1"></div>
-                    <div class="shape shape-2"></div>
-                    <div class="shape shape-3"></div>
-                    <div class="shape shape-4"></div>
-                    <div class="shape shape-5"></div>
-                </div>
-                <div class="grid-pattern"></div>
-            </div>
-            <div class="particles-container" id="particles"></div>
-            <div class="gradient-overlay"></div>
+      <div class="hero-background">
+        <div class="animated-background">
+          <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+          </div>
+          <div class="grid-pattern"></div>
         </div>
-        
-        <div class="hero-content">
-            <div class="hero-text">
-                <div class="hero-intro">
-                    <span class="intro-line">Hello, I'm</span>
-                </div>
-                <h1 class="hero-title">
-                    <span class="hero-name">
-                        <span class="name-part" data-text="Jack">Jack</span>
-                        <span class="name-part" data-text="Gewirz">Gewirz</span>
-                    </span>
-                    <span class="hero-subtitle">
-                        <span class="subtitle-word">Elite</span>
-                        <span class="subtitle-word">Professional</span>
-                        <span class="subtitle-word">Portfolio</span>
-                    </span>
-                </h1>
-                
-                <div class="hero-tagline-container">
-                    <p class="hero-tagline" id="heroTagline">
-                        <span class="tagline-part">Elite Poker Professional</span>
-                        <span class="tagline-separator">•</span>
-                        <span class="tagline-part">Marketing Strategist</span>
-                        <span class="tagline-separator">•</span>
-                        <span class="tagline-part">AI Innovation Specialist</span>
-                    </p>
-                </div>
+        <div class="particles-container" id="particles"></div>
+        <div class="gradient-overlay"></div>
+      </div>
 
-                <div class="hero-stats" id="heroStats">
-                    <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
-                        <div class="stat-wrapper">
-                            <span class="stat-symbol">$</span>
-                            <span class="stat-number" data-target="400">0</span>
-                            <span class="stat-suffix">K+</span>
-                        </div>
-                        <span class="stat-label">Career Earnings</span>
-                        <div class="stat-background"></div>
-                    </div>
-                    <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-                        <div class="stat-wrapper">
-                            <span class="stat-number" data-target="50">0</span>
-                            <span class="stat-suffix">th</span>
-                        </div>
-                        <span class="stat-label">Global Rank</span>
-                        <div class="stat-background"></div>
-                    </div>
-                    <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
-                        <div class="stat-wrapper">
-                            <span class="stat-number" data-target="6000">0</span>
-                            <span class="stat-suffix">+</span>
-                        </div>
-                        <span class="stat-label">Games Mastered</span>
-                        <div class="stat-background"></div>
-                    </div>
-                    <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
-                        <div class="stat-wrapper">
-                            <span class="stat-number" data-target="5">0</span>
-                            <span class="stat-suffix">+</span>
-                        </div>
-                        <span class="stat-label">Years Experience</span>
-                        <div class="stat-background"></div>
-                    </div>
-                </div>
-                
-                <div class="hero-cta" data-aos="fade-up" data-aos-delay="500">
-                    <a href="#poker" class="btn btn-primary btn-enhanced">
-                        <span class="btn-text">Explore Portfolio</span>
-                        <div class="btn-shimmer"></div>
-                        <div class="btn-ripple"></div>
-                    </a>
-                    <a href="#contact" class="btn btn-secondary btn-enhanced">
-                        <span class="btn-text">Get In Touch</span>
-                        <div class="btn-shimmer"></div>
-                        <div class="btn-ripple"></div>
-                    </a>
-                </div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-intro">
+            <span class="intro-line">Hello, I'm</span>
+          </div>
+          <h1 class="hero-title">
+            <span class="hero-name">
+              <span class="name-part" data-text="Jack">Jack</span>
+              <span class="name-part" data-text="Gewirz">Gewirz</span>
+            </span>
+            <span class="hero-subtitle">
+              <span class="subtitle-word">Elite</span>
+              <span class="subtitle-word">Professional</span>
+              <span class="subtitle-word">Portfolio</span>
+            </span>
+          </h1>
+
+          <div class="hero-tagline-container">
+            <p class="hero-tagline" id="heroTagline">
+              <span class="tagline-part">Elite Poker Professional</span>
+              <span class="tagline-separator">•</span>
+              <span class="tagline-part">Marketing Strategist</span>
+              <span class="tagline-separator">•</span>
+              <span class="tagline-part">AI Innovation Specialist</span>
+            </p>
+          </div>
+
+          <div class="hero-stats" id="heroStats">
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+              <div class="stat-wrapper">
+                <span class="stat-symbol">$</span>
+                <span class="stat-number" data-target="400">0</span>
+                <span class="stat-suffix">K+</span>
+              </div>
+              <span class="stat-label">Career Earnings</span>
+              <div class="stat-background"></div>
             </div>
-        </div>
-        
-        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="600">
-            <div class="scroll-text">Scroll to explore</div>
-            <div class="scroll-arrow">
-                <div class="scroll-arrow-line"></div>
-                <div class="scroll-arrow-head"></div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+              <div class="stat-wrapper">
+                <span class="stat-number" data-target="50">0</span>
+                <span class="stat-suffix">th</span>
+              </div>
+              <span class="stat-label">Global Rank</span>
+              <div class="stat-background"></div>
             </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+              <div class="stat-wrapper">
+                <span class="stat-number" data-target="6000">0</span>
+                <span class="stat-suffix">+</span>
+              </div>
+              <span class="stat-label">Games Mastered</span>
+              <div class="stat-background"></div>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+              <div class="stat-wrapper">
+                <span class="stat-number" data-target="5">0</span>
+                <span class="stat-suffix">+</span>
+              </div>
+              <span class="stat-label">Years Experience</span>
+              <div class="stat-background"></div>
+            </div>
+          </div>
+
+          <div class="hero-cta" data-aos="fade-up" data-aos-delay="500">
+            <a href="#poker" class="btn btn-primary btn-enhanced">
+              <span class="btn-text">Explore Portfolio</span>
+              <div class="btn-shimmer"></div>
+              <div class="btn-ripple"></div>
+            </a>
+            <a href="#contact" class="btn btn-secondary btn-enhanced">
+              <span class="btn-text">Get In Touch</span>
+              <div class="btn-shimmer"></div>
+              <div class="btn-ripple"></div>
+            </a>
+          </div>
         </div>
+      </div>
+
+      <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="600">
+        <div class="scroll-text">Scroll to explore</div>
+        <div class="scroll-arrow">
+          <div class="scroll-arrow-line"></div>
+          <div class="scroll-arrow-head"></div>
+        </div>
+      </div>
     </section>
 
     <!-- Elite Poker Career Section -->
     <section id="poker" class="poker-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Elite Poker Career</h2>
-                <p class="section-description">
-                    Through intensive game theory study, advanced mathematical analysis, and disciplined bankroll management, 
-                    achieved elite status among the world's top 50 online poker earners with consistent performance over 18+ months.
-                </p>
-            </div>
-            
-            <div class="poker-content">
-                <div class="poker-metrics">
-                    <div class="metric-card glass-effect">
-                        <div class="metric-icon">🏆</div>
-                        <div class="metric-value">Top 50</div>
-                        <div class="metric-label">Global Online Earner</div>
-                    </div>
-                    <div class="metric-card glass-effect">
-                        <div class="metric-icon">💰</div>
-                        <div class="metric-value">$400K+</div>
-                        <div class="metric-label">Career Earnings</div>
-                    </div>
-                    <div class="metric-card glass-effect">
-                        <div class="metric-icon">🎯</div>
-                        <div class="metric-value">6,000+</div>
-                        <div class="metric-label">Games Played</div>
-                    </div>
-                    <div class="metric-card glass-effect">
-                        <div class="metric-icon">👨‍🏫</div>
-                        <div class="metric-value">Coach</div>
-                        <div class="metric-label">& Mentor</div>
-                    </div>
-                </div>
-
-                <!-- Professional Testimonial Section -->
-                <div class="testimonial-section glass-effect">
-                    <div class="testimonial-header">
-                        <h3 class="testimonial-title">Professional Endorsement</h3>
-                        <div class="testimonial-source">MyPoker Backer - Investment Partnership</div>
-                    </div>
-                    <blockquote class="testimonial-content">
-                        "Throughout our <strong>18-month partnership</strong>, Jack has demonstrated exceptional 
-                        <strong>analytical excellence</strong> and sophisticated <strong>solver work expertise</strong>. 
-                        His performance shows <strong>minimal variance relative to win rate</strong>, making this 
-                        partnership a truly <strong>stress-free investment</strong>. Jack's mathematical approach 
-                        and consistent execution have exceeded all performance expectations."
-                    </blockquote>
-                    <div class="testimonial-metrics">
-                        <div class="testimonial-metric">
-                            <span class="metric-number">18</span>
-                            <span class="metric-unit">Months</span>
-                            <span class="metric-desc">Partnership Duration</span>
-                        </div>
-                        <div class="testimonial-metric">
-                            <span class="metric-number">Low</span>
-                            <span class="metric-unit">Variance</span>
-                            <span class="metric-desc">Risk Profile</span>
-                        </div>
-                        <div class="testimonial-metric">
-                            <span class="metric-number">Expert</span>
-                            <span class="metric-unit">Level</span>
-                            <span class="metric-desc">Solver Analysis</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="chart-container glass-effect">
-                    <h3 class="chart-title">Career Progression - Consistent Excellence</h3>
-                    <div class="chart-wrapper">
-                        <canvas id="profitChart" role="img" aria-label="Poker career profit progression chart"></canvas>
-                    </div>
-                    <div class="chart-description">
-                        Consistent upward trajectory from initial learning phase to six-figure annual earnings, 
-                        demonstrating analytical excellence and minimal variance performance over 18+ months of professional play.
-                    </div>
-                </div>
-                
-                <!-- Poker Expertise Breakdown -->
-                <div class="poker-expertise">
-                    <div class="expertise-item glass-effect">
-                        <div class="expertise-icon">🧮</div>
-                        <h4 class="expertise-title">Mathematical Analysis</h4>
-                        <p class="expertise-description">Advanced solver work and game theory optimization using cutting-edge analytical tools</p>
-                    </div>
-                    <div class="expertise-item glass-effect">
-                        <div class="expertise-icon">📊</div>
-                        <h4 class="expertise-title">Variance Management</h4>
-                        <p class="expertise-description">Minimal variance relative to win rate through disciplined bankroll management</p>
-                    </div>
-                    <div class="expertise-item glass-effect">
-                        <div class="expertise-icon">🎯</div>
-                        <h4 class="expertise-title">Strategic Execution</h4>
-                        <p class="expertise-description">Consistent performance delivery exceeding investor expectations over 18+ months</p>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Elite Poker Career</h2>
+          <p class="section-description">
+            Through intensive game theory study, advanced mathematical analysis,
+            and disciplined bankroll management, achieved elite status among the
+            world's top 50 online poker earners with consistent performance over
+            18+ months.
+          </p>
         </div>
+
+        <div class="poker-content">
+          <div class="poker-metrics">
+            <div class="metric-card glass-effect">
+              <div class="metric-icon">🏆</div>
+              <div class="metric-value">Top 50</div>
+              <div class="metric-label">Global Online Earner</div>
+            </div>
+            <div class="metric-card glass-effect">
+              <div class="metric-icon">💰</div>
+              <div class="metric-value">$400K+</div>
+              <div class="metric-label">Career Earnings</div>
+            </div>
+            <div class="metric-card glass-effect">
+              <div class="metric-icon">🎯</div>
+              <div class="metric-value">6,000+</div>
+              <div class="metric-label">Games Played</div>
+            </div>
+            <div class="metric-card glass-effect">
+              <div class="metric-icon">👨‍🏫</div>
+              <div class="metric-value">Coach</div>
+              <div class="metric-label">& Mentor</div>
+            </div>
+          </div>
+
+          <!-- Professional Testimonial Section -->
+          <div class="testimonial-section glass-effect">
+            <div class="testimonial-header">
+              <h3 class="testimonial-title">Professional Endorsement</h3>
+              <div class="testimonial-source">
+                MyPoker Backer - Investment Partnership
+              </div>
+            </div>
+            <blockquote class="testimonial-content">
+              "Throughout our <strong>18-month partnership</strong>, Jack has
+              demonstrated exceptional
+              <strong>analytical excellence</strong> and sophisticated
+              <strong>solver work expertise</strong>. His performance shows
+              <strong>minimal variance relative to win rate</strong>, making
+              this partnership a truly <strong>stress-free investment</strong>.
+              Jack's mathematical approach and consistent execution have
+              exceeded all performance expectations."
+            </blockquote>
+            <div class="testimonial-metrics">
+              <div class="testimonial-metric">
+                <span class="metric-number">18</span>
+                <span class="metric-unit">Months</span>
+                <span class="metric-desc">Partnership Duration</span>
+              </div>
+              <div class="testimonial-metric">
+                <span class="metric-number">Low</span>
+                <span class="metric-unit">Variance</span>
+                <span class="metric-desc">Risk Profile</span>
+              </div>
+              <div class="testimonial-metric">
+                <span class="metric-number">Expert</span>
+                <span class="metric-unit">Level</span>
+                <span class="metric-desc">Solver Analysis</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="chart-container glass-effect">
+            <h3 class="chart-title">
+              Career Progression - Consistent Excellence
+            </h3>
+            <div class="chart-wrapper">
+              <canvas
+                id="profitChart"
+                role="img"
+                aria-label="Poker career profit progression chart"
+              ></canvas>
+            </div>
+            <div class="chart-description">
+              Consistent upward trajectory from initial learning phase to
+              six-figure annual earnings, demonstrating analytical excellence
+              and minimal variance performance over 18+ months of professional
+              play.
+            </div>
+          </div>
+
+          <!-- Poker Expertise Breakdown -->
+          <div class="poker-expertise">
+            <div class="expertise-item glass-effect">
+              <div class="expertise-icon">🧮</div>
+              <h4 class="expertise-title">Mathematical Analysis</h4>
+              <p class="expertise-description">
+                Advanced solver work and game theory optimization using
+                cutting-edge analytical tools
+              </p>
+            </div>
+            <div class="expertise-item glass-effect">
+              <div class="expertise-icon">📊</div>
+              <h4 class="expertise-title">Variance Management</h4>
+              <p class="expertise-description">
+                Minimal variance relative to win rate through disciplined
+                bankroll management
+              </p>
+            </div>
+            <div class="expertise-item glass-effect">
+              <div class="expertise-icon">🎯</div>
+              <h4 class="expertise-title">Strategic Execution</h4>
+              <p class="expertise-description">
+                Consistent performance delivery exceeding investor expectations
+                over 18+ months
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- AI Proficiency Section -->
     <section id="ai-proficiency" class="ai-proficiency-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Advanced AI Integration Specialist</h2>
-                <p class="section-description">
-                    Leveraging cutting-edge artificial intelligence and machine learning technologies to drive strategic 
-                    decision-making across poker strategy, marketing optimization, and business analytics.
-                </p>
-            </div>
-
-            <div class="ai-content">
-                <!-- AI Applications Overview -->
-                <div class="ai-applications">
-                    <div class="ai-application-card glass-effect">
-                        <div class="application-header">
-                            <div class="application-icon">🎯</div>
-                            <h3 class="application-title">AI-Powered Poker Strategy</h3>
-                        </div>
-                        <ul class="application-features">
-                            <li>Advanced solver analysis using PioSOLVER and GTO+ optimization tools</li>
-                            <li>Machine learning models for opponent tendency analysis and exploitation</li>
-                            <li>Automated hand history analysis with pattern recognition algorithms</li>
-                            <li>Predictive modeling for variance reduction and bankroll optimization</li>
-                        </ul>
-                    </div>
-
-                    <div class="ai-application-card glass-effect">
-                        <div class="application-header">
-                            <div class="application-icon">📈</div>
-                            <h3 class="application-title">Marketing Analytics & Optimization</h3>
-                        </div>
-                        <ul class="application-features">
-                            <li>AI-driven customer segmentation and behavioral prediction models</li>
-                            <li>Automated A/B testing frameworks with statistical significance detection</li>
-                            <li>Machine learning-powered content optimization for social media campaigns</li>
-                            <li>Predictive analytics for conversion rate optimization and ROAS improvement</li>
-                        </ul>
-                    </div>
-
-                    <div class="ai-application-card glass-effect">
-                        <div class="application-header">
-                            <div class="application-icon">🤖</div>
-                            <h3 class="application-title">Business Intelligence & Automation</h3>
-                        </div>
-                        <ul class="application-features">
-                            <li>Advanced data pipeline automation using Python and machine learning libraries</li>
-                            <li>Natural language processing for market sentiment analysis</li>
-                            <li>Computer vision applications for competitive analysis and trend identification</li>
-                            <li>Reinforcement learning algorithms for strategic decision optimization</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- AI Tools & Technologies -->
-                <div class="ai-tools-section glass-effect">
-                    <h3 class="tools-title">
-                        <span class="tools-icon">⚡</span>
-                        AI Tools & Technologies Mastery
-                    </h3>
-                    <div class="tools-categories">
-                        <div class="tools-category">
-                            <h4 class="category-name">Machine Learning Frameworks</h4>
-                            <div class="tools-list">
-                                <span class="tool-tag">TensorFlow</span>
-                                <span class="tool-tag">PyTorch</span>
-                                <span class="tool-tag">Scikit-learn</span>
-                                <span class="tool-tag">XGBoost</span>
-                            </div>
-                        </div>
-                        <div class="tools-category">
-                            <h4 class="category-name">Data Analysis & Visualization</h4>
-                            <div class="tools-list">
-                                <span class="tool-tag">Python/Pandas</span>
-                                <span class="tool-tag">R Programming</span>
-                                <span class="tool-tag">Tableau</span>
-                                <span class="tool-tag">Power BI</span>
-                            </div>
-                        </div>
-                        <div class="tools-category">
-                            <h4 class="category-name">Specialized Poker AI</h4>
-                            <div class="tools-list">
-                                <span class="tool-tag">PioSOLVER</span>
-                                <span class="tool-tag">GTO+</span>
-                                <span class="tool-tag">PokerTracker</span>
-                                <span class="tool-tag">HoldemManager</span>
-                            </div>
-                        </div>
-                        <div class="tools-category">
-                            <h4 class="category-name">Cloud & Deployment</h4>
-                            <div class="tools-list">
-                                <span class="tool-tag">AWS SageMaker</span>
-                                <span class="tool-tag">Google Cloud AI</span>
-                                <span class="tool-tag">Azure ML</span>
-                                <span class="tool-tag">Docker</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- AI Impact Metrics -->
-                <div class="ai-impact-metrics">
-                    <div class="impact-metric glass-effect">
-                        <div class="impact-number">95%+</div>
-                        <div class="impact-label">Model Accuracy</div>
-                        <div class="impact-description">Strategic Decision Algorithms</div>
-                    </div>
-                    <div class="impact-metric glass-effect">
-                        <div class="impact-number">40%</div>
-                        <div class="impact-label">Efficiency Gain</div>
-                        <div class="impact-description">Automated Analysis Processes</div>
-                    </div>
-                    <div class="impact-metric glass-effect">
-                        <div class="impact-number">3x</div>
-                        <div class="impact-label">ROI Improvement</div>
-                        <div class="impact-description">AI-Optimized Campaigns</div>
-                    </div>
-                    <div class="impact-metric glass-effect">
-                        <div class="impact-number">24/7</div>
-                        <div class="impact-label">Monitoring</div>
-                        <div class="impact-description">Intelligent Alert Systems</div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Advanced AI Integration Specialist</h2>
+          <p class="section-description">
+            Leveraging cutting-edge artificial intelligence and machine learning
+            technologies to drive strategic decision-making across poker
+            strategy, marketing optimization, and business analytics.
+          </p>
         </div>
+
+        <div class="ai-content">
+          <!-- AI Applications Overview -->
+          <div class="ai-applications">
+            <div class="ai-application-card glass-effect">
+              <div class="application-header">
+                <div class="application-icon">🎯</div>
+                <h3 class="application-title">AI-Powered Poker Strategy</h3>
+              </div>
+              <ul class="application-features">
+                <li>
+                  Advanced solver analysis using PioSOLVER and GTO+ optimization
+                  tools
+                </li>
+                <li>
+                  Machine learning models for opponent tendency analysis and
+                  exploitation
+                </li>
+                <li>
+                  Automated hand history analysis with pattern recognition
+                  algorithms
+                </li>
+                <li>
+                  Predictive modeling for variance reduction and bankroll
+                  optimization
+                </li>
+              </ul>
+            </div>
+
+            <div class="ai-application-card glass-effect">
+              <div class="application-header">
+                <div class="application-icon">📈</div>
+                <h3 class="application-title">
+                  Marketing Analytics & Optimization
+                </h3>
+              </div>
+              <ul class="application-features">
+                <li>
+                  AI-driven customer segmentation and behavioral prediction
+                  models
+                </li>
+                <li>
+                  Automated A/B testing frameworks with statistical significance
+                  detection
+                </li>
+                <li>
+                  Machine learning-powered content optimization for social media
+                  campaigns
+                </li>
+                <li>
+                  Predictive analytics for conversion rate optimization and ROAS
+                  improvement
+                </li>
+              </ul>
+            </div>
+
+            <div class="ai-application-card glass-effect">
+              <div class="application-header">
+                <div class="application-icon">🤖</div>
+                <h3 class="application-title">
+                  Business Intelligence & Automation
+                </h3>
+              </div>
+              <ul class="application-features">
+                <li>
+                  Advanced data pipeline automation using Python and machine
+                  learning libraries
+                </li>
+                <li>
+                  Natural language processing for market sentiment analysis
+                </li>
+                <li>
+                  Computer vision applications for competitive analysis and
+                  trend identification
+                </li>
+                <li>
+                  Reinforcement learning algorithms for strategic decision
+                  optimization
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- AI Tools & Technologies -->
+          <div class="ai-tools-section glass-effect">
+            <h3 class="tools-title">
+              <span class="tools-icon">⚡</span>
+              AI Tools & Technologies Mastery
+            </h3>
+            <div class="tools-categories">
+              <div class="tools-category">
+                <h4 class="category-name">Machine Learning Frameworks</h4>
+                <div class="tools-list">
+                  <span class="tool-tag">TensorFlow</span>
+                  <span class="tool-tag">PyTorch</span>
+                  <span class="tool-tag">Scikit-learn</span>
+                  <span class="tool-tag">XGBoost</span>
+                </div>
+              </div>
+              <div class="tools-category">
+                <h4 class="category-name">Data Analysis & Visualization</h4>
+                <div class="tools-list">
+                  <span class="tool-tag">Python/Pandas</span>
+                  <span class="tool-tag">R Programming</span>
+                  <span class="tool-tag">Tableau</span>
+                  <span class="tool-tag">Power BI</span>
+                </div>
+              </div>
+              <div class="tools-category">
+                <h4 class="category-name">Specialized Poker AI</h4>
+                <div class="tools-list">
+                  <span class="tool-tag">PioSOLVER</span>
+                  <span class="tool-tag">GTO+</span>
+                  <span class="tool-tag">PokerTracker</span>
+                  <span class="tool-tag">HoldemManager</span>
+                </div>
+              </div>
+              <div class="tools-category">
+                <h4 class="category-name">Cloud & Deployment</h4>
+                <div class="tools-list">
+                  <span class="tool-tag">AWS SageMaker</span>
+                  <span class="tool-tag">Google Cloud AI</span>
+                  <span class="tool-tag">Azure ML</span>
+                  <span class="tool-tag">Docker</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI Impact Metrics -->
+          <div class="ai-impact-metrics">
+            <div class="impact-metric glass-effect">
+              <div class="impact-number">95%+</div>
+              <div class="impact-label">Model Accuracy</div>
+              <div class="impact-description">
+                Strategic Decision Algorithms
+              </div>
+            </div>
+            <div class="impact-metric glass-effect">
+              <div class="impact-number">40%</div>
+              <div class="impact-label">Efficiency Gain</div>
+              <div class="impact-description">Automated Analysis Processes</div>
+            </div>
+            <div class="impact-metric glass-effect">
+              <div class="impact-number">3x</div>
+              <div class="impact-label">ROI Improvement</div>
+              <div class="impact-description">AI-Optimized Campaigns</div>
+            </div>
+            <div class="impact-metric glass-effect">
+              <div class="impact-number">24/7</div>
+              <div class="impact-label">Monitoring</div>
+              <div class="impact-description">Intelligent Alert Systems</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Professional Experience Section -->
     <section id="experience" class="experience-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Professional Experience</h2>
-                <p class="section-description">
-                    A diverse background spanning marketing, entrepreneurship, and strategic sales across multiple industries, 
-                    consistently delivering exceptional results and exceeding performance targets.
-                </p>
-            </div>
-
-            <!-- Achievement Metrics Display -->
-            <div class="achievement-metrics">
-                <div class="achievement-item">
-                    <div class="achievement-number">$2M+</div>
-                    <div class="achievement-label">Crowdfunding Generated</div>
-                </div>
-                <div class="achievement-item">
-                    <div class="achievement-number">$10K+</div>
-                    <div class="achievement-label">Marketplace Profits</div>
-                </div>
-                <div class="achievement-item">
-                    <div class="achievement-number">Top 2</div>
-                    <div class="achievement-label">Sales Performer</div>
-                </div>
-                <div class="achievement-item">
-                    <div class="achievement-number">1,000+</div>
-                    <div class="achievement-label">Direct Sales Completed</div>
-                </div>
-            </div>
-
-            <div class="timeline">
-                <div class="timeline-item" data-aos="fade-up">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content glass-effect experience-card">
-                        <div class="timeline-date">January 2021 - July 2021</div>
-                        <h3 class="timeline-title">Content Marketing Internship</h3>
-                        <div class="timeline-company">Ford Hamilton</div>
-                        <div class="experience-summary">
-                            Led comprehensive content marketing campaigns across multiple high-value projects, 
-                            working directly with executive leadership to drive exceptional crowdfunding and social media results.
-                        </div>
-                        <ul class="timeline-description">
-                            <li>Organized and executed promotional content for Island Coastal Lager, Tost, and Heli campaigns</li>
-                            <li>Generated <strong>$2M in crowdfunding</strong> through strategic content marketing initiatives</li>
-                            <li>Achieved <strong>100K+ social media impressions</strong> across multiple platforms</li>
-                            <li>Collaborated weekly with CEO on strategy development and creative direction</li>
-                            <li>Optimized Google Analytics setup for maximum ROAS measurement and improvement</li>
-                            <li>Developed data-driven content strategies resulting in significantly improved engagement rates</li>
-                        </ul>
-                        <div class="timeline-metrics">
-                            <span class="metric-tag featured">$2M Crowdfunding</span>
-                            <span class="metric-tag featured">100K+ Impressions</span>
-                            <span class="metric-tag">Executive Collaboration</span>
-                            <span class="metric-tag">Analytics Optimization</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-aos="fade-up">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content glass-effect experience-card">
-                        <div class="timeline-date">June 2020 - December 2020</div>
-                        <h3 class="timeline-title">Online Marketplace Entrepreneur</h3>
-                        <div class="timeline-company">Independent Business</div>
-                        <div class="experience-summary">
-                            Built and operated a successful Reddit-based international marketplace from concept to execution, 
-                            demonstrating strong entrepreneurial skills and strategic growth management.
-                        </div>
-                        <ul class="timeline-description">
-                            <li>Created comprehensive Reddit-based international marketplace infrastructure</li>
-                            <li>Generated <strong>$10,000+ in personal profits</strong> through strategic operations</li>
-                            <li>Facilitated <strong>1,000+ unique transactions</strong> with international customers</li>
-                            <li>Achieved remarkable growth trajectory: <strong>750 sales in final 3 months</strong></li>
-                            <li>Developed reputation management systems ensuring high customer satisfaction</li>
-                            <li>Implemented data-driven pricing strategies and inventory optimization</li>
-                        </ul>
-                        <div class="timeline-metrics">
-                            <span class="metric-tag featured">$10K+ Profit</span>
-                            <span class="metric-tag featured">1,000+ Transactions</span>
-                            <span class="metric-tag">750 Final Quarter Sales</span>
-                            <span class="metric-tag">International Marketplace</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-aos="fade-up">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content glass-effect experience-card">
-                        <div class="timeline-date">Summer 2019</div>
-                        <h3 class="timeline-title">Solar Energy Sales Representative</h3>
-                        <div class="timeline-company">Blue Raven Solar</div>
-                        <div class="experience-summary">
-                            Achieved exceptional sales performance through innovative demographic analysis and personalized 
-                            presentation strategies, ranking among top performers in a competitive 17-person team.
-                        </div>
-                        <ul class="timeline-description">
-                            <li>Delivered <strong>1,000+ face-to-face presentations</strong> with exceptional results</li>
-                            <li>Achieved <strong>4.8% conversion rate</strong>, significantly above industry average</li>
-                            <li>Ranked as <strong>2nd highest performer</strong> among 17 sales representatives</li>
-                            <li>Developed innovative demographic-based personalized pitch strategies</li>
-                            <li>Utilized advanced market analysis to identify and target high-potential prospects</li>
-                            <li>Maintained consistently high performance throughout the entire engagement period</li>
-                        </ul>
-                        <div class="timeline-metrics">
-                            <span class="metric-tag featured">4.8% Conversion Rate</span>
-                            <span class="metric-tag featured">Top 2 Performer</span>
-                            <span class="metric-tag">1,000+ Presentations</span>
-                            <span class="metric-tag">Demographic Analysis</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-aos="fade-up">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content glass-effect experience-card">
-                        <div class="timeline-date">September 2019 - January 2020</div>
-                        <h3 class="timeline-title">Regional Marketing Representative</h3>
-                        <div class="timeline-company">Guyaki Yerba Mate</div>
-                        <div class="experience-summary">
-                            Executed comprehensive regional marketing campaigns in the Denver area, focusing on 
-                            face-to-face engagement and brand loyalty building through strategic consumer education.
-                        </div>
-                        <ul class="timeline-description">
-                            <li>Orchestrated complete Denver area regional marketing campaign</li>
-                            <li>Generated <strong>20,000 social media impressions in just 2 months</strong></li>
-                            <li>Conducted bi-weekly consumer engagement and comprehensive brand education sessions</li>
-                            <li>Developed and implemented face-to-face marketing strategies for brand awareness</li>
-                            <li>Built strong local brand loyalty through personalized customer interactions</li>
-                            <li>Created measurable impact on regional brand recognition and consumer adoption</li>
-                        </ul>
-                        <div class="timeline-metrics">
-                            <span class="metric-tag featured">20K Impressions</span>
-                            <span class="metric-tag featured">2 Months</span>
-                            <span class="metric-tag">Regional Campaign</span>
-                            <span class="metric-tag">Brand Loyalty</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Professional Experience</h2>
+          <p class="section-description">
+            A diverse background spanning marketing, entrepreneurship, and
+            strategic sales across multiple industries, consistently delivering
+            exceptional results and exceeding performance targets.
+          </p>
         </div>
+
+        <!-- Achievement Metrics Display -->
+        <div class="achievement-metrics">
+          <div class="achievement-item">
+            <div class="achievement-number">$2M+</div>
+            <div class="achievement-label">Crowdfunding Generated</div>
+          </div>
+          <div class="achievement-item">
+            <div class="achievement-number">$10K+</div>
+            <div class="achievement-label">Marketplace Profits</div>
+          </div>
+          <div class="achievement-item">
+            <div class="achievement-number">Top 2</div>
+            <div class="achievement-label">Sales Performer</div>
+          </div>
+          <div class="achievement-item">
+            <div class="achievement-number">1,000+</div>
+            <div class="achievement-label">Direct Sales Completed</div>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content glass-effect experience-card">
+              <div class="timeline-date">January 2021 - July 2021</div>
+              <h3 class="timeline-title">Content Marketing Internship</h3>
+              <div class="timeline-company">Ford Hamilton</div>
+              <div class="experience-summary">
+                Led comprehensive content marketing campaigns across multiple
+                high-value projects, working directly with executive leadership
+                to drive exceptional crowdfunding and social media results.
+              </div>
+              <ul class="timeline-description">
+                <li>
+                  Organized and executed promotional content for Island Coastal
+                  Lager, Tost, and Heli campaigns
+                </li>
+                <li>
+                  Generated <strong>$2M in crowdfunding</strong> through
+                  strategic content marketing initiatives
+                </li>
+                <li>
+                  Achieved
+                  <strong>100K+ social media impressions</strong> across
+                  multiple platforms
+                </li>
+                <li>
+                  Collaborated weekly with CEO on strategy development and
+                  creative direction
+                </li>
+                <li>
+                  Optimized Google Analytics setup for maximum ROAS measurement
+                  and improvement
+                </li>
+                <li>
+                  Developed data-driven content strategies resulting in
+                  significantly improved engagement rates
+                </li>
+              </ul>
+              <div class="timeline-metrics">
+                <span class="metric-tag featured">$2M Crowdfunding</span>
+                <span class="metric-tag featured">100K+ Impressions</span>
+                <span class="metric-tag">Executive Collaboration</span>
+                <span class="metric-tag">Analytics Optimization</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content glass-effect experience-card">
+              <div class="timeline-date">June 2020 - December 2020</div>
+              <h3 class="timeline-title">Online Marketplace Entrepreneur</h3>
+              <div class="timeline-company">Independent Business</div>
+              <div class="experience-summary">
+                Built and operated a successful Reddit-based international
+                marketplace from concept to execution, demonstrating strong
+                entrepreneurial skills and strategic growth management.
+              </div>
+              <ul class="timeline-description">
+                <li>
+                  Created comprehensive Reddit-based international marketplace
+                  infrastructure
+                </li>
+                <li>
+                  Generated
+                  <strong>$10,000+ in personal profits</strong> through
+                  strategic operations
+                </li>
+                <li>
+                  Facilitated <strong>1,000+ unique transactions</strong> with
+                  international customers
+                </li>
+                <li>
+                  Achieved remarkable growth trajectory:
+                  <strong>750 sales in final 3 months</strong>
+                </li>
+                <li>
+                  Developed reputation management systems ensuring high customer
+                  satisfaction
+                </li>
+                <li>
+                  Implemented data-driven pricing strategies and inventory
+                  optimization
+                </li>
+              </ul>
+              <div class="timeline-metrics">
+                <span class="metric-tag featured">$10K+ Profit</span>
+                <span class="metric-tag featured">1,000+ Transactions</span>
+                <span class="metric-tag">750 Final Quarter Sales</span>
+                <span class="metric-tag">International Marketplace</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content glass-effect experience-card">
+              <div class="timeline-date">Summer 2019</div>
+              <h3 class="timeline-title">Solar Energy Sales Representative</h3>
+              <div class="timeline-company">Blue Raven Solar</div>
+              <div class="experience-summary">
+                Achieved exceptional sales performance through innovative
+                demographic analysis and personalized presentation strategies,
+                ranking among top performers in a competitive 17-person team.
+              </div>
+              <ul class="timeline-description">
+                <li>
+                  Delivered
+                  <strong>1,000+ face-to-face presentations</strong> with
+                  exceptional results
+                </li>
+                <li>
+                  Achieved <strong>4.8% conversion rate</strong>, significantly
+                  above industry average
+                </li>
+                <li>
+                  Ranked as <strong>2nd highest performer</strong> among 17
+                  sales representatives
+                </li>
+                <li>
+                  Developed innovative demographic-based personalized pitch
+                  strategies
+                </li>
+                <li>
+                  Utilized advanced market analysis to identify and target
+                  high-potential prospects
+                </li>
+                <li>
+                  Maintained consistently high performance throughout the entire
+                  engagement period
+                </li>
+              </ul>
+              <div class="timeline-metrics">
+                <span class="metric-tag featured">4.8% Conversion Rate</span>
+                <span class="metric-tag featured">Top 2 Performer</span>
+                <span class="metric-tag">1,000+ Presentations</span>
+                <span class="metric-tag">Demographic Analysis</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-aos="fade-up">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content glass-effect experience-card">
+              <div class="timeline-date">September 2019 - January 2020</div>
+              <h3 class="timeline-title">Regional Marketing Representative</h3>
+              <div class="timeline-company">Guyaki Yerba Mate</div>
+              <div class="experience-summary">
+                Executed comprehensive regional marketing campaigns in the
+                Denver area, focusing on face-to-face engagement and brand
+                loyalty building through strategic consumer education.
+              </div>
+              <ul class="timeline-description">
+                <li>
+                  Orchestrated complete Denver area regional marketing campaign
+                </li>
+                <li>
+                  Generated
+                  <strong
+                    >20,000 social media impressions in just 2 months</strong
+                  >
+                </li>
+                <li>
+                  Conducted bi-weekly consumer engagement and comprehensive
+                  brand education sessions
+                </li>
+                <li>
+                  Developed and implemented face-to-face marketing strategies
+                  for brand awareness
+                </li>
+                <li>
+                  Built strong local brand loyalty through personalized customer
+                  interactions
+                </li>
+                <li>
+                  Created measurable impact on regional brand recognition and
+                  consumer adoption
+                </li>
+              </ul>
+              <div class="timeline-metrics">
+                <span class="metric-tag featured">20K Impressions</span>
+                <span class="metric-tag featured">2 Months</span>
+                <span class="metric-tag">Regional Campaign</span>
+                <span class="metric-tag">Brand Loyalty</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills" class="skills-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Core Competencies</h2>
-                <p class="section-description">
-                    Advanced proficiency across technical, marketing, AI analytics, and strategic gaming disciplines with proven track record of excellence.
-                </p>
-            </div>
-
-            <div class="skills-content">
-                <div class="skills-categories">
-                    <!-- Technical Skills Category -->
-                    <div class="skill-category glass-effect" data-aos="fade-up" data-aos-delay="100">
-                        <h3 class="category-title">
-                            <span class="category-icon">💻</span>
-                            Technical Skills
-                        </h3>
-                        <div class="skill-bars">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Data Analysis & Statistics</span>
-                                    <span class="skill-level skill-level-expert">Expert</span>
-                                </div>
-                                <div class="skill-bar-container">
-                                    <div class="skill-bar">
-                                        <div class="skill-progress" data-progress="95"></div>
-                                    </div>
-                                    <span class="skill-percentage">95%</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">System Optimization</span>
-                                    <span class="skill-level skill-level-expert">Expert</span>
-                                </div>
-                                <div class="skill-bar-container">
-                                    <div class="skill-bar">
-                                        <div class="skill-progress" data-progress="90"></div>
-                                    </div>
-                                    <span class="skill-percentage">90%</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Process Automation</span>
-                                    <span class="skill-level skill-level-advanced">Advanced</span>
-                                </div>
-                                <div class="skill-bar-container">
-                                    <div class="skill-bar">
-                                        <div class="skill-progress" data-progress="88"></div>
-                                    </div>
-                                    <span class="skill-percentage">88%</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Software Integration</span>
-                                    <span class="skill-level skill-level-advanced">Advanced</span>
-                                </div>
-                                <div class="skill-bar-container">
-                                    <div class="skill-bar">
-                                        <div class="skill-progress" data-progress="85"></div>
-                                    </div>
-                                    <span class="skill-percentage">85%</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Marketing Skills Category -->
-                    <div class="skill-category glass-effect" data-aos="fade-up" data-aos-delay="200">
-                        <h3 class="category-title">
-                            <span class="category-icon">📈</span>
-                            Marketing Skills
-                        </h3>
-                        <div class="skill-bars">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Digital Marketing Strategy</span>
-                                    <span class="skill-level skill-level-expert">Expert</span>
-                                </div>
-                                <div class="skill-bar-container">
-                                    <div class="skill-bar">
-                                        <div class="skill-progress" data-progress="95"></div>
-                                    </div>
-                                    <span class="skill-percentage">95%</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Sales Performance</span>
-                                    <span class="skill-level skill-level-expert">Expert</span>
-                                </div>
-                                <div class="skill-bar-container">
-                                    <div class="skill-bar">
-                                        <div class="skill-progress" data-progress="92"></div>
-                                    </div>
-                                    <span class="skill-percentage">92%</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Brand Development</span>
-                                    <span class="skill-level skill-level-advanced">Advanced</span>
-                                </div>
-                                <div class="skill-bar-container">
-                                    <div class="skill-bar">
-                                        <div class="skill-progress" data-progress="88"></div>
-                                    </div>
-                                    <span class="skill-percentage">88%</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Customer Acquisition</span>
-                                    <span class="skill-level skill-level-advanced">Advanced</span>
-                                </div>
-                                <div class="skill-bar-container">
-                                    <div class="skill-bar">
-                                        <div class="skill-progress" data-progress="90"></div>
-                                    </div>
-                                    <span class="skill-percentage">90%</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- AI/Analytics Category -->
-                    <div class="skill-category glass-effect" data-aos="fade-up" data-aos-delay="300">
-                        <h3 class="category-title">
-                            <span class="category-icon">🤖</span>
-                            AI/Analytics
-                        </h3>
-                        <div class="skill-bars">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Machine Learning</span>
-                                    <span class="skill-level skill-level-expert">Expert</span>
-                                </div>
-                                <div class="skill-bar-container">
-                                    <div class="skill-bar">
-                                        <div class="skill-progress" data-progress="90"></div>
-                                    </div>
-                                    <span class="skill-percentage">90%</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Predictive Analytics</span>
-                                    <span class="skill-level skill-level-expert">Expert</span>
-                                </div>
-                                <div class="skill-bar-container">
-                                    <div class="skill-bar">
-                                        <div class="skill-progress" data-progress="88"></div>
-                                    </div>
-                                    <span class="skill-percentage">88%</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Neural Networks</span>
-                                    <span class="skill-level skill-level-advanced">Advanced</span>
-                                </div>
-                                <div class="skill-bar-container">
-                                    <div class="skill-bar">
-                                        <div class="skill-progress" data-progress="82"></div>
-                                    </div>
-                                    <span class="skill-percentage">82%</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Deep Learning</span>
-                                    <span class="skill-level skill-level-advanced">Advanced</span>
-                                </div>
-                                <div class="skill-bar-container">
-                                    <div class="skill-bar">
-                                        <div class="skill-progress" data-progress="80"></div>
-                                    </div>
-                                    <span class="skill-percentage">80%</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Poker Strategy Category -->
-                    <div class="skill-category glass-effect" data-aos="fade-up" data-aos-delay="400">
-                        <h3 class="category-title">
-                            <span class="category-icon">🎯</span>
-                            Poker Strategy
-                        </h3>
-                        <div class="skill-bars">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Game Theory Optimal</span>
-                                    <span class="skill-level skill-level-expert">Expert</span>
-                                </div>
-                                <div class="skill-bar-container">
-                                    <div class="skill-bar">
-                                        <div class="skill-progress" data-progress="98"></div>
-                                    </div>
-                                    <span class="skill-percentage">98%</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Mathematical Analysis</span>
-                                    <span class="skill-level skill-level-expert">Expert</span>
-                                </div>
-                                <div class="skill-bar-container">
-                                    <div class="skill-bar">
-                                        <div class="skill-progress" data-progress="95"></div>
-                                    </div>
-                                    <span class="skill-percentage">95%</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Risk Management</span>
-                                    <span class="skill-level skill-level-expert">Expert</span>
-                                </div>
-                                <div class="skill-bar-container">
-                                    <div class="skill-bar">
-                                        <div class="skill-progress" data-progress="93"></div>
-                                    </div>
-                                    <span class="skill-percentage">93%</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Tournament Strategy</span>
-                                    <span class="skill-level skill-level-expert">Expert</span>
-                                </div>
-                                <div class="skill-bar-container">
-                                    <div class="skill-bar">
-                                        <div class="skill-progress" data-progress="92"></div>
-                                    </div>
-                                    <span class="skill-percentage">92%</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Technology Expertise Overview -->
-                <div class="ai-technologies glass-effect" data-aos="fade-up" data-aos-delay="500">
-                    <h3 class="category-title">
-                        <span class="category-icon">⚡</span>
-                        Technology Expertise
-                    </h3>
-                    <div class="tech-grid">
-                        <div class="tech-item">
-                            <div class="tech-icon">🧠</div>
-                            <div class="tech-name">Machine Learning</div>
-                            <div class="tech-tooltip">TensorFlow, PyTorch, Scikit-learn</div>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-icon">📊</div>
-                            <div class="tech-name">Data Analytics</div>
-                            <div class="tech-tooltip">Python, R, SQL, Tableau</div>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-icon">🎯</div>
-                            <div class="tech-name">PioSOLVER</div>
-                            <div class="tech-tooltip">Advanced poker strategy analysis</div>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-icon">🔬</div>
-                            <div class="tech-name">Statistical Modeling</div>
-                            <div class="tech-tooltip">Probability theory and forecasting</div>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-icon">⚙️</div>
-                            <div class="tech-name">Process Optimization</div>
-                            <div class="tech-tooltip">Workflow automation and efficiency</div>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-icon">💡</div>
-                            <div class="tech-name">Innovation Strategy</div>
-                            <div class="tech-tooltip">Digital transformation solutions</div>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-icon">🎲</div>
-                            <div class="tech-name">Risk Assessment</div>
-                            <div class="tech-tooltip">Advanced probability analysis</div>
-                        </div>
-                        <div class="tech-item">
-                            <div class="tech-icon">🔄</div>
-                            <div class="tech-name">System Integration</div>
-                            <div class="tech-tooltip">Complex system optimization</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Core Competencies</h2>
+          <p class="section-description">
+            Advanced proficiency across technical, marketing, AI analytics, and
+            strategic gaming disciplines with proven track record of excellence.
+          </p>
         </div>
+
+        <div class="skills-content">
+          <div class="skills-categories">
+            <!-- Technical Skills Category -->
+            <div
+              class="skill-category glass-effect"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <h3 class="category-title">
+                <span class="category-icon">💻</span>
+                Technical Skills
+              </h3>
+              <div class="skill-bars">
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Data Analysis & Statistics</span>
+                    <span class="skill-level skill-level-expert">Expert</span>
+                  </div>
+                  <div class="skill-bar-container">
+                    <div class="skill-bar">
+                      <div class="skill-progress" data-progress="95"></div>
+                    </div>
+                    <span class="skill-percentage">95%</span>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">System Optimization</span>
+                    <span class="skill-level skill-level-expert">Expert</span>
+                  </div>
+                  <div class="skill-bar-container">
+                    <div class="skill-bar">
+                      <div class="skill-progress" data-progress="90"></div>
+                    </div>
+                    <span class="skill-percentage">90%</span>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Process Automation</span>
+                    <span class="skill-level skill-level-advanced"
+                      >Advanced</span
+                    >
+                  </div>
+                  <div class="skill-bar-container">
+                    <div class="skill-bar">
+                      <div class="skill-progress" data-progress="88"></div>
+                    </div>
+                    <span class="skill-percentage">88%</span>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Software Integration</span>
+                    <span class="skill-level skill-level-advanced"
+                      >Advanced</span
+                    >
+                  </div>
+                  <div class="skill-bar-container">
+                    <div class="skill-bar">
+                      <div class="skill-progress" data-progress="85"></div>
+                    </div>
+                    <span class="skill-percentage">85%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Marketing Skills Category -->
+            <div
+              class="skill-category glass-effect"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <h3 class="category-title">
+                <span class="category-icon">📈</span>
+                Marketing Skills
+              </h3>
+              <div class="skill-bars">
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Digital Marketing Strategy</span>
+                    <span class="skill-level skill-level-expert">Expert</span>
+                  </div>
+                  <div class="skill-bar-container">
+                    <div class="skill-bar">
+                      <div class="skill-progress" data-progress="95"></div>
+                    </div>
+                    <span class="skill-percentage">95%</span>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Sales Performance</span>
+                    <span class="skill-level skill-level-expert">Expert</span>
+                  </div>
+                  <div class="skill-bar-container">
+                    <div class="skill-bar">
+                      <div class="skill-progress" data-progress="92"></div>
+                    </div>
+                    <span class="skill-percentage">92%</span>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Brand Development</span>
+                    <span class="skill-level skill-level-advanced"
+                      >Advanced</span
+                    >
+                  </div>
+                  <div class="skill-bar-container">
+                    <div class="skill-bar">
+                      <div class="skill-progress" data-progress="88"></div>
+                    </div>
+                    <span class="skill-percentage">88%</span>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Customer Acquisition</span>
+                    <span class="skill-level skill-level-advanced"
+                      >Advanced</span
+                    >
+                  </div>
+                  <div class="skill-bar-container">
+                    <div class="skill-bar">
+                      <div class="skill-progress" data-progress="90"></div>
+                    </div>
+                    <span class="skill-percentage">90%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- AI/Analytics Category -->
+            <div
+              class="skill-category glass-effect"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <h3 class="category-title">
+                <span class="category-icon">🤖</span>
+                AI/Analytics
+              </h3>
+              <div class="skill-bars">
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Machine Learning</span>
+                    <span class="skill-level skill-level-expert">Expert</span>
+                  </div>
+                  <div class="skill-bar-container">
+                    <div class="skill-bar">
+                      <div class="skill-progress" data-progress="90"></div>
+                    </div>
+                    <span class="skill-percentage">90%</span>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Predictive Analytics</span>
+                    <span class="skill-level skill-level-expert">Expert</span>
+                  </div>
+                  <div class="skill-bar-container">
+                    <div class="skill-bar">
+                      <div class="skill-progress" data-progress="88"></div>
+                    </div>
+                    <span class="skill-percentage">88%</span>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Neural Networks</span>
+                    <span class="skill-level skill-level-advanced"
+                      >Advanced</span
+                    >
+                  </div>
+                  <div class="skill-bar-container">
+                    <div class="skill-bar">
+                      <div class="skill-progress" data-progress="82"></div>
+                    </div>
+                    <span class="skill-percentage">82%</span>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Deep Learning</span>
+                    <span class="skill-level skill-level-advanced"
+                      >Advanced</span
+                    >
+                  </div>
+                  <div class="skill-bar-container">
+                    <div class="skill-bar">
+                      <div class="skill-progress" data-progress="80"></div>
+                    </div>
+                    <span class="skill-percentage">80%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Poker Strategy Category -->
+            <div
+              class="skill-category glass-effect"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <h3 class="category-title">
+                <span class="category-icon">🎯</span>
+                Poker Strategy
+              </h3>
+              <div class="skill-bars">
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Game Theory Optimal</span>
+                    <span class="skill-level skill-level-expert">Expert</span>
+                  </div>
+                  <div class="skill-bar-container">
+                    <div class="skill-bar">
+                      <div class="skill-progress" data-progress="98"></div>
+                    </div>
+                    <span class="skill-percentage">98%</span>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Mathematical Analysis</span>
+                    <span class="skill-level skill-level-expert">Expert</span>
+                  </div>
+                  <div class="skill-bar-container">
+                    <div class="skill-bar">
+                      <div class="skill-progress" data-progress="95"></div>
+                    </div>
+                    <span class="skill-percentage">95%</span>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Risk Management</span>
+                    <span class="skill-level skill-level-expert">Expert</span>
+                  </div>
+                  <div class="skill-bar-container">
+                    <div class="skill-bar">
+                      <div class="skill-progress" data-progress="93"></div>
+                    </div>
+                    <span class="skill-percentage">93%</span>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Tournament Strategy</span>
+                    <span class="skill-level skill-level-expert">Expert</span>
+                  </div>
+                  <div class="skill-bar-container">
+                    <div class="skill-bar">
+                      <div class="skill-progress" data-progress="92"></div>
+                    </div>
+                    <span class="skill-percentage">92%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technology Expertise Overview -->
+          <div
+            class="ai-technologies glass-effect"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <h3 class="category-title">
+              <span class="category-icon">⚡</span>
+              Technology Expertise
+            </h3>
+            <div class="tech-grid">
+              <div class="tech-item">
+                <div class="tech-icon">🧠</div>
+                <div class="tech-name">Machine Learning</div>
+                <div class="tech-tooltip">
+                  TensorFlow, PyTorch, Scikit-learn
+                </div>
+              </div>
+              <div class="tech-item">
+                <div class="tech-icon">📊</div>
+                <div class="tech-name">Data Analytics</div>
+                <div class="tech-tooltip">Python, R, SQL, Tableau</div>
+              </div>
+              <div class="tech-item">
+                <div class="tech-icon">🎯</div>
+                <div class="tech-name">PioSOLVER</div>
+                <div class="tech-tooltip">Advanced poker strategy analysis</div>
+              </div>
+              <div class="tech-item">
+                <div class="tech-icon">🔬</div>
+                <div class="tech-name">Statistical Modeling</div>
+                <div class="tech-tooltip">
+                  Probability theory and forecasting
+                </div>
+              </div>
+              <div class="tech-item">
+                <div class="tech-icon">⚙️</div>
+                <div class="tech-name">Process Optimization</div>
+                <div class="tech-tooltip">
+                  Workflow automation and efficiency
+                </div>
+              </div>
+              <div class="tech-item">
+                <div class="tech-icon">💡</div>
+                <div class="tech-name">Innovation Strategy</div>
+                <div class="tech-tooltip">Digital transformation solutions</div>
+              </div>
+              <div class="tech-item">
+                <div class="tech-icon">🎲</div>
+                <div class="tech-name">Risk Assessment</div>
+                <div class="tech-tooltip">Advanced probability analysis</div>
+              </div>
+              <div class="tech-item">
+                <div class="tech-icon">🔄</div>
+                <div class="tech-name">System Integration</div>
+                <div class="tech-tooltip">Complex system optimization</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Let's Connect</h2>
-                <p class="section-description">
-                    Ready to discuss opportunities in marketing, poker strategy, AI innovation, or strategic partnerships. 
-                    Let's explore how we can collaborate to achieve exceptional results.
-                </p>
-            </div>
-
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-cta glass-effect">
-                        <h3 class="cta-title">Ready to Get Started?</h3>
-                        <p class="cta-description">
-                            Whether you're looking for marketing expertise, poker coaching, AI integration, 
-                            or strategic consultation, I'm here to help drive your success.
-                        </p>
-                        <div class="cta-highlights">
-                            <div class="highlight-item">
-                                <span class="highlight-icon">🎯</span>
-                                <span class="highlight-text">Strategic Marketing Consultation</span>
-                            </div>
-                            <div class="highlight-item">
-                                <span class="highlight-icon">🃏</span>
-                                <span class="highlight-text">Elite Poker Strategy & Coaching</span>
-                            </div>
-                            <div class="highlight-item">
-                                <span class="highlight-icon">🤖</span>
-                                <span class="highlight-text">AI Integration & Optimization</span>
-                            </div>
-                            <div class="highlight-item">
-                                <span class="highlight-icon">💼</span>
-                                <span class="highlight-text">Business Development Partnerships</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contact-item glass-effect">
-                        <div class="contact-icon">📧</div>
-                        <div class="contact-details">
-                            <h3>Email</h3>
-                            <p>jack.gewirz@example.com</p>
-                            <span class="contact-note">Response within 24 hours</span>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item glass-effect">
-                        <div class="contact-icon">🔗</div>
-                        <div class="contact-details">
-                            <h3>LinkedIn</h3>
-                            <p>linkedin.com/in/jackgewirz</p>
-                            <span class="contact-note">Professional networking</span>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item glass-effect">
-                        <div class="contact-icon">💼</div>
-                        <div class="contact-details">
-                            <h3>Portfolio Download</h3>
-                            <p>Complete professional portfolio</p>
-                            <span class="contact-note">Detailed case studies included</span>
-                        </div>
-                    </div>
-
-                    <!-- Social Links -->
-                    <div class="social-links glass-effect">
-                        <h3 class="social-title">Connect With Me</h3>
-                        <div class="social-buttons">
-                            <a href="#" class="social-button linkedin">
-                                <span class="social-icon">💼</span>
-                                <span class="social-text">LinkedIn</span>
-                            </a>
-                            <a href="#" class="social-button twitter">
-                                <span class="social-icon">🐦</span>
-                                <span class="social-text">Twitter</span>
-                            </a>
-                            <a href="#" class="social-button github">
-                                <span class="social-icon">💻</span>
-                                <span class="social-text">GitHub</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <form class="contact-form glass-effect" id="contactForm">
-                    <div class="form-header">
-                        <h3 class="form-title">Send a Message</h3>
-                        <p class="form-subtitle">Let's discuss your project or opportunity</p>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required placeholder="Your full name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="subject">Subject *</label>
-                        <select id="subject" name="subject" required>
-                            <option value="">What can I help you with?</option>
-                            <option value="marketing">Marketing Strategy & Consultation</option>
-                            <option value="poker">Poker Coaching & Strategy</option>
-                            <option value="ai">AI Integration & Development</option>
-                            <option value="partnership">Strategic Partnership</option>
-                            <option value="investment">Investment Opportunity</option>
-                            <option value="other">Other Professional Inquiry</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Message *</label>
-                        <textarea id="message" name="message" rows="6" required 
-                                placeholder="Tell me about your project, goals, or how I can help you achieve success..."></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary btn-enhanced btn-full-width">
-                        <span class="btn-text">Send Message</span>
-                        <div class="btn-shimmer"></div>
-                        <div class="btn-ripple"></div>
-                    </button>
-                    
-                    <div class="form-note">
-                        <span class="note-icon">🔒</span>
-                        Your information is secure and will never be shared with third parties.
-                    </div>
-                </form>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Let's Connect</h2>
+          <p class="section-description">
+            Ready to discuss opportunities in marketing, poker strategy, AI
+            innovation, or strategic partnerships. Let's explore how we can
+            collaborate to achieve exceptional results.
+          </p>
         </div>
+
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="contact-cta glass-effect">
+              <h3 class="cta-title">Ready to Get Started?</h3>
+              <p class="cta-description">
+                Whether you're looking for marketing expertise, poker coaching,
+                AI integration, or strategic consultation, I'm here to help
+                drive your success.
+              </p>
+              <div class="cta-highlights">
+                <div class="highlight-item">
+                  <span class="highlight-icon">🎯</span>
+                  <span class="highlight-text"
+                    >Strategic Marketing Consultation</span
+                  >
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">🃏</span>
+                  <span class="highlight-text"
+                    >Elite Poker Strategy & Coaching</span
+                  >
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">🤖</span>
+                  <span class="highlight-text"
+                    >AI Integration & Optimization</span
+                  >
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">💼</span>
+                  <span class="highlight-text"
+                    >Business Development Partnerships</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-item glass-effect">
+              <div class="contact-icon">📧</div>
+              <div class="contact-details">
+                <h3>Email</h3>
+                <p>jack.gewirz@example.com</p>
+                <span class="contact-note">Response within 24 hours</span>
+              </div>
+            </div>
+
+            <div class="contact-item glass-effect">
+              <div class="contact-icon">🔗</div>
+              <div class="contact-details">
+                <h3>LinkedIn</h3>
+                <p>linkedin.com/in/jackgewirz</p>
+                <span class="contact-note">Professional networking</span>
+              </div>
+            </div>
+
+            <div class="contact-item glass-effect">
+              <div class="contact-icon">💼</div>
+              <div class="contact-details">
+                <h3>Portfolio Download</h3>
+                <p>Complete professional portfolio</p>
+                <span class="contact-note">Detailed case studies included</span>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-links glass-effect">
+              <h3 class="social-title">Connect With Me</h3>
+              <div class="social-buttons">
+                <a href="#" class="social-button linkedin">
+                  <span class="social-icon">💼</span>
+                  <span class="social-text">LinkedIn</span>
+                </a>
+                <a href="#" class="social-button twitter">
+                  <span class="social-icon">🐦</span>
+                  <span class="social-text">Twitter</span>
+                </a>
+                <a href="#" class="social-button github">
+                  <span class="social-icon">💻</span>
+                  <span class="social-text">GitHub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form glass-effect" id="contactForm">
+            <div class="form-header">
+              <h3 class="form-title">Send a Message</h3>
+              <p class="form-subtitle">
+                Let's discuss your project or opportunity
+              </p>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Your full name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="your.email@example.com"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject *</label>
+              <select id="subject" name="subject" required>
+                <option value="">What can I help you with?</option>
+                <option value="marketing">
+                  Marketing Strategy & Consultation
+                </option>
+                <option value="poker">Poker Coaching & Strategy</option>
+                <option value="ai">AI Integration & Development</option>
+                <option value="partnership">Strategic Partnership</option>
+                <option value="investment">Investment Opportunity</option>
+                <option value="other">Other Professional Inquiry</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                required
+                placeholder="Tell me about your project, goals, or how I can help you achieve success..."
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn-primary btn-enhanced btn-full-width"
+            >
+              <span class="btn-text">Send Message</span>
+              <div class="btn-shimmer"></div>
+              <div class="btn-ripple"></div>
+            </button>
+
+            <div class="form-note">
+              <span class="note-icon">🔒</span>
+              Your information is secure and will never be shared with third
+              parties.
+            </div>
+          </form>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-text">
-                    <p>&copy; 2024 Jack Gewirz. All rights reserved.</p>
-                </div>
-                <div class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#poker">Poker</a>
-                    <a href="#ai-proficiency">AI Expertise</a>
-                    <a href="#experience">Experience</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-text">
+            <p>&copy; 2024 Jack Gewirz. All rights reserved.</p>
+          </div>
+          <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#poker">Poker</a>
+            <a href="#ai-proficiency">AI Expertise</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+          </div>
         </div>
+      </div>
     </footer>
 
     <!-- Scripts -->
     <script src="scripts/main.js"></script>
     <script src="scripts/charts.js"></script>
     <script src="scripts/animations.js"></script>
-</body>
-</html> 
+
+    <script type="module">
+      import { createChat } from "https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js";
+
+      createChat({
+        webhookUrl:
+          "https://jgewirz.app.n8n.cloud/webhook/f6ae650e-8071-411e-b1a7-6317ea002fe3/chat",
+      });
+    </script>
+  </body>
+</html>
