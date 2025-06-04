@@ -5,6 +5,21 @@
 
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Hide loading screen immediately
+    const loadingScreen = document.getElementById('loadingScreen');
+    if (loadingScreen) {
+        // Hide loading screen after a short delay to show the animation
+        setTimeout(() => {
+            loadingScreen.classList.add('hidden');
+            // Remove from DOM after CSS transition completes
+            setTimeout(() => {
+                if (loadingScreen.parentNode) {
+                    loadingScreen.parentNode.removeChild(loadingScreen);
+                }
+            }, 500);
+        }, 1000); // Show loading for 1 second, then hide
+    }
+    
     // Core functionality
     initNavigation();
     initThemeToggle();
@@ -740,22 +755,17 @@ console.log(`
 📧 Contact: jack.gewirz@example.com
 `);
 
-// Loading Screen Management
-function showLoadingScreen() {
+// Loading Screen Management - FIXED VERSION
+function hideLoadingScreen() {
     const loadingScreen = document.getElementById('loadingScreen');
     if (loadingScreen) {
-        // Hide loading screen after page loads
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                loadingScreen.classList.add('hidden');
-                // Remove from DOM after transition
-                setTimeout(() => {
-                    if (loadingScreen.parentNode) {
-                        loadingScreen.parentNode.removeChild(loadingScreen);
-                    }
-                }, 500);
-            }, 800); // Delay to show loading animation
-        });
+        loadingScreen.classList.add('hidden');
+        // Remove from DOM after transition
+        setTimeout(() => {
+            if (loadingScreen.parentNode) {
+                loadingScreen.parentNode.removeChild(loadingScreen);
+            }
+        }, 500);
     }
 }
 
