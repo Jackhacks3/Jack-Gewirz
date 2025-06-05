@@ -36,6 +36,14 @@ document.addEventListener('DOMContentLoaded', function() {
     initLoadingStates();
     initEnhancedFeatures();
     
+    // New animation features
+    initScrollProgressIndicator();
+    initCursorTrail();
+    initParallaxEffects();
+    initSectionAnimations();
+    initEnhancedHoverEffects();
+    initTextRevealAnimations();
+    
     // Performance optimizations
     const debouncedResize = debounce(() => {
         // Recalculate animations on resize
@@ -49,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.dispatchEvent(new Event('scroll'));
     }, 100);
     
-    console.log('Enhanced Portfolio initialized successfully! 🚀');
+    console.log('Enhanced Portfolio with Advanced Animations initialized successfully! 🚀✨');
 });
 
 /* ================================
@@ -852,6 +860,238 @@ function initButtonEffects() {
                     ripple.style.height = '0';
                 }, 300);
             }
+        });
+    });
+}
+
+// New animation features
+function initScrollProgressIndicator() {
+    // Create scroll progress bar
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress';
+    document.body.appendChild(progressBar);
+    
+    // Update progress on scroll
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        progressBar.style.width = scrollPercent + '%';
+    });
+}
+
+function initCursorTrail() {
+    if (window.innerWidth < 768) return; // Skip on mobile
+    
+    const trails = [];
+    const trailLength = 8;
+    
+    // Create trail elements
+    for (let i = 0; i < trailLength; i++) {
+        const trail = document.createElement('div');
+        trail.className = 'cursor-trail';
+        trail.style.opacity = (1 - i / trailLength) * 0.7;
+        trail.style.transform = `scale(${1 - i / trailLength * 0.5})`;
+        document.body.appendChild(trail);
+        trails.push(trail);
+    }
+    
+    let mouseX = 0, mouseY = 0;
+    let trailX = [], trailY = [];
+    
+    // Initialize trail positions
+    for (let i = 0; i < trailLength; i++) {
+        trailX[i] = 0;
+        trailY[i] = 0;
+    }
+    
+    // Track mouse movement
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+    
+    // Animate trail
+    function updateTrail() {
+        trailX[0] = mouseX;
+        trailY[0] = mouseY;
+        
+        for (let i = 1; i < trailLength; i++) {
+            trailX[i] += (trailX[i - 1] - trailX[i]) * 0.3;
+            trailY[i] += (trailY[i - 1] - trailY[i]) * 0.3;
+            
+            trails[i].style.left = trailX[i] - 4 + 'px';
+            trails[i].style.top = trailY[i] - 4 + 'px';
+        }
+        
+        requestAnimationFrame(updateTrail);
+    }
+    
+    updateTrail();
+}
+
+function initParallaxEffects() {
+    const parallaxElements = document.querySelectorAll('.floating-shapes .shape');
+    
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * -0.5;
+        
+        parallaxElements.forEach((element, index) => {
+            const speed = (index + 1) * 0.2;
+            element.style.transform = `translateY(${rate * speed}px)`;
+        });
+    });
+}
+
+function initSectionAnimations() {
+    const sections = document.querySelectorAll('section');
+    
+    // Add animation classes to sections
+    sections.forEach(section => {
+        section.classList.add('section-animate');
+    });
+    
+    const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                
+                // Animate child elements with stagger
+                const childElements = entry.target.querySelectorAll('.metric-card, .timeline-item, .contact-item, .ai-application-card');
+                childElements.forEach((child, index) => {
+                    setTimeout(() => {
+                        child.classList.add('stagger-fade', 'animate');
+                    }, index * 150);
+                });
+            }
+        });
+    }, observerOptions);
+    
+    sections.forEach(section => {
+        sectionObserver.observe(section);
+    });
+}
+
+function initEnhancedHoverEffects() {
+    // Enhanced card hover effects
+    const cards = document.querySelectorAll('.metric-card, .contact-item, .ai-application-card');
+    
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-8px) scale(1.02)';
+            
+            // Add floating animation to icons
+            const icon = card.querySelector('.metric-icon, .contact-icon, .application-icon');
+            if (icon) {
+                icon.classList.add('float-animation');
+            }
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+            
+            // Remove floating animation
+            const icon = card.querySelector('.metric-icon, .contact-icon, .application-icon');
+            if (icon) {
+                icon.classList.remove('float-animation');
+            }
+        });
+    });
+    
+    // Enhanced button effects
+    const buttons = document.querySelectorAll('.btn');
+    
+    buttons.forEach(button => {
+        button.addEventListener('mouseenter', () => {
+            button.style.transform = 'translateY(-2px)';
+        });
+        
+        button.addEventListener('mouseleave', () => {
+            button.style.transform = '';
+        });
+        
+        button.addEventListener('mousedown', () => {
+            button.style.transform = 'translateY(0) scale(0.98)';
+        });
+        
+        button.addEventListener('mouseup', () => {
+            button.style.transform = 'translateY(-2px)';
+        });
+    });
+    
+    // Glass effect enhancement
+    const glassElements = document.querySelectorAll('.glass-effect');
+    
+    glassElements.forEach(element => {
+        // Add enhanced glass class
+        element.classList.add('glass-effect-animated');
+        
+        element.addEventListener('mouseenter', () => {
+            element.style.backdropFilter = 'blur(25px)';
+            element.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+        });
+        
+        element.addEventListener('mouseleave', () => {
+            element.style.backdropFilter = 'blur(20px)';
+            element.style.borderColor = 'var(--glass-border)';
+        });
+    });
+}
+
+function initTextRevealAnimations() {
+    // Add text reveal effect to specific elements
+    const revealElements = document.querySelectorAll('.section-title, .hero-title');
+    
+    revealElements.forEach(element => {
+        element.classList.add('text-reveal');
+    });
+    
+    // Animated typing effect for taglines
+    const taglines = document.querySelectorAll('.tagline-part');
+    
+    taglines.forEach((tagline, index) => {
+        const text = tagline.textContent;
+        tagline.textContent = '';
+        tagline.style.borderRight = '2px solid var(--primary)';
+        
+        // Animate text character by character
+        setTimeout(() => {
+            let charIndex = 0;
+            const typeInterval = setInterval(() => {
+                tagline.textContent += text[charIndex];
+                charIndex++;
+                
+                if (charIndex >= text.length) {
+                    clearInterval(typeInterval);
+                    // Remove cursor after typing
+                    setTimeout(() => {
+                        tagline.style.borderRight = 'none';
+                    }, 500);
+                }
+            }, 50);
+        }, 2000 + (index * 500));
+    });
+    
+    // Animated counter with enhanced effects
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    statNumbers.forEach(statNumber => {
+        statNumber.addEventListener('mouseenter', () => {
+            statNumber.style.transform = 'scale(1.1)';
+            statNumber.style.color = 'var(--primary)';
+            statNumber.style.textShadow = '0 0 20px rgba(102, 126, 234, 0.5)';
+        });
+        
+        statNumber.addEventListener('mouseleave', () => {
+            statNumber.style.transform = '';
+            statNumber.style.color = '';
+            statNumber.style.textShadow = '';
         });
     });
 } 
